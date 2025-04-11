@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import DogoPr from "../dogoPr/page";
+import DuodincoPrPage from "../duodingcoPr/page";
 
 const phrases = [
   "안녕하세요! 반가워요.",
@@ -17,10 +19,10 @@ export default function HomePage() {
 
   useEffect(() => {
     if (index < phrases.length) {
-      const timer = setTimeout(() => setIndex(index + 1), 2000);
+      const timer = setTimeout(() => setIndex(index + 1), 1200);
       return () => clearTimeout(timer);
     } else {
-      const done = setTimeout(() => setIsFinished(true), 300);
+      const done = setTimeout(() => setIsFinished(true), 100);
       return () => clearTimeout(done);
     }
   }, [index]);
@@ -49,10 +51,17 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="min-h-screen bg-white p-10"
+            className="flex gap-8 min-h-screen bg-white p-10 justify-center items-center"
           >
-            <h1 className="text-4xl ">프론트엔드 개발자 </h1>
-            <h1 className="text-4xl font-pretendard">프론트엔드 개발자 </h1>
+            <div>
+              <h1 className="text-4xl ">프론트엔드 개발자 </h1>
+              <DogoPr />
+            </div>
+
+            <div>
+              <h1 className="text-4xl font-pretendard">프론트엔드 개발자 </h1>
+              <DuodincoPrPage />
+            </div>
           </motion.section>
         </>
       )}

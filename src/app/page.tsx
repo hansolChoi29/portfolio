@@ -1,5 +1,5 @@
 "use client";
-import Scroll from "./scroll/page";
+import Scroll from "./projects/page";
 import { motion } from "framer-motion";
 export default function Home() {
   return (
