@@ -21,10 +21,10 @@ export default function DuodincoPrPage() {
           transition={{ duration: 0.3 }}
         >
           <div className="relative flex items-center justify-center py-8">
-            <h2 className="text-3xl font-bold">duodingco</h2>
+            <h2 className="text-3xl font-bold my-24">duodingco</h2>
             <button
               onClick={() => setOpen(false)}
-              className="absolute right-5 text-lg font-bold"
+              className="absolute right-5 text-lg font-bold mr-24"
             >
               ✕
             </button>
