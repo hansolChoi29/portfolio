@@ -1,11 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import DuodincoCard from "../components/DudincoCard";
+import ReactDOM from "react-dom";
 
 export default function DuodincoPrPage() {
   const [open, setOpen] = useState(false);
-  return (
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  const modalContent = (
     <>
       <div className=" gap-6">
         <DuodincoCard onClick={() => setOpen(true)} />
@@ -35,6 +40,14 @@ export default function DuodincoPrPage() {
           </motion.div>
         )}
       </AnimatePresence>
+    </>
+  );
+  return (
+    <>
+      <div className=" gap-6">
+        <DuodincoCard onClick={() => setOpen(true)} />
+      </div>
+      {mounted && ReactDOM.createPortal(modalContent, document.body)}
     </>
   );
 }
