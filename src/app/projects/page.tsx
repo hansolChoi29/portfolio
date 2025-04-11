@@ -19,10 +19,10 @@ export default function HomePage() {
 
   useEffect(() => {
     if (index < phrases.length) {
-      const timer = setTimeout(() => setIndex(index + 1), 1200);
+      const timer = setTimeout(() => setIndex(index + 1), 1800);
       return () => clearTimeout(timer);
     } else {
-      const done = setTimeout(() => setIsFinished(true), 100);
+      const done = setTimeout(() => setIsFinished(true), 300);
       return () => clearTimeout(done);
     }
   }, [index]);
@@ -30,19 +30,30 @@ export default function HomePage() {
   return (
     <main className={`${!isFinished ? "h-screen overflow-hidden" : ""}`}>
       {!isFinished ? (
-        <div className="bg-black h-screen w-full flex items-center justify-center relative">
-          <AnimatePresence mode="wait">
-            <motion.h1
-              key={index}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              className="absolute text-white text-3xl md:text-5xl font-bold text-center px-6"
-            >
-              {phrases[index]}
-            </motion.h1>
-          </AnimatePresence>
+        <div className="relative w-full h-screen overflow-hidden">
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            src="/intro.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+
+          <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black/40">
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+                className="text-white text-3xl md:text-5xl font-bold text-center px-6"
+              >
+                {phrases[index]}
+              </motion.h1>
+            </AnimatePresence>
+          </div>
         </div>
       ) : (
         <>
