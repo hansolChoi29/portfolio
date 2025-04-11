@@ -14,36 +14,40 @@ const slides = [
   },
   {
     type: "phrase",
-    text: "강력한 추진력과 문제 해결 능력을 가진 개발자",
+    text: "강력한 추진력과 문제 해결",
   },
   {
     type: "phrase",
-    text: "최한솔입니다.",
+    text: "그리고 원활한 의사소통을 중요시합니다.",
+  },
+
+  {
+    type: "phrase",
+    text: "프로젝트를 소개하겠습니다.",
   },
   {
     type: "project",
-    title: "두고 프로젝트는 사용자의 편의를 중시합니다.1",
-    description: "두고 프로젝트를 진행하며 많은 경험을 쌓았습니다.",
-    image: ["/images/dogohome.png", "/images/dogoList.png"],
+    title: "Dogo-project",
+    description: "숙박기간을 지정하여 호텔을 검색할 수 있습니다.",
+    image: "/images/dogohome.png",
   },
   {
     type: "project",
-    // title: "두고 프로젝트는 사용자의 편의를 중시합니다.2",
-    description: "두고 프로젝트를 진행하며 많은 경험을 쌓았습니다.",
-    image: ["/images/dogoBoo.png", "/images/dogoModal.png"],
+    description: "필터를 이용하여 둘러볼 수 있습니다.",
+    image: "/images/dogoList.png",
   },
   {
     type: "project",
-    // title: "두고 프로젝트는 사용자의 편의를 중시합니다.3",
-    description: "두고 프로젝트를 진행하며 많은 경험을 쌓았습니다.",
-    image: "/images/dogoDetail.png",
+    description: "객실을 자세히 확인하고 예약할 수 있습니다.",
+    image: ["/images/dogoModal.png", "/images/dogoBoo.png"],
   },
-  {
-    type: "project",
-    title: "듀오딩코는 개발자의 학습을 도와줍니다.",
-    description: "듀오딩코 프로젝트를 통해 협업과 혁신을 경험했습니다.",
-    image: "/images/project2.png",
-  },
+
+  // {
+  //   type: "project",
+  //   title: "듀오딩코는 개발자의 학습을 도와줍니다.",
+  //   description: "듀오딩코 프로젝트를 통해 협업과 혁신을 경험했습니다.",
+  //   image: "/images/project2.png",
+  // },
 ];
 
 export default function HomePage() {
@@ -113,14 +117,14 @@ export default function HomePage() {
                         key={i}
                         src={img}
                         alt={`${slides[index].title} ${i + 1}`}
-                        className="mx-auto mt-4 w-full max-w-md rounded-lg shadow-lg"
+                        className="mx-auto mt-4 w-[700px]  rounded-lg shadow-lg"
                       />
                     ))
                   ) : (
                     <img
                       src={slides[index].image}
                       alt={slides[index].title}
-                      className="mx-auto mt-4 w-full max-w-md rounded-lg shadow-lg"
+                      className="mx-auto mt-4 w-[1000px] h-[500px] rounded-lg shadow-lg"
                     />
                   )}
                 </div>
@@ -144,10 +148,12 @@ export default function HomePage() {
             </motion.div>
           )}
         </AnimatePresence>
+        {/* 프로젝트 섹션: 섹션의 약 50%가 뷰포트에 들어오면 나타남 */}
         <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 10 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 1 }}
           className="flex gap-8 min-h-screen bg-white p-10 justify-center items-center"
         >
           <div>

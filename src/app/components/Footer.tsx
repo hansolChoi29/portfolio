@@ -5,8 +5,8 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 w-full py-10 px-6 text-left border-t">
-      <div className="flex flex-col space-y-3 text-lg text-gray-800">
+    <footer className=" w-full py-10 px-6 text-left ">
+      <div className="flex items-end  border-t p-4 flex-col space-y-3 text-lg text-gray-800">
         <div className="flex gap-2">
           <p className="text-gray-600">전화번호 </p>
           <p>010-2915-2931</p>
