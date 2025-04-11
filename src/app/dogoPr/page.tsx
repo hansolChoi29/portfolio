@@ -115,7 +115,7 @@ export default function DogoPr() {
                     사용자가 이름과 전화번호를 입력하면, Supabase의 사용자
                     정보와 일치하는 경우 해당 이메일을 찾아 반환하도록 구현
                   </p>
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-col items-center gap-2">
                     <img src="/images/dogoFindId.png" />
                     <img src="/images/dogoFindId2.png" className="w-96" />
                     <img src="/images/dogoFindIdFinal.png" className="w-96" />
@@ -129,7 +129,7 @@ export default function DogoPr() {
                     적용
                   </p>
 
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-col items-center gap-2">
                     <img src="/images/dogoFindPassword.png" />
                     <img src="/images/dogoNewPassword.png" className="w-96" />
                     <img
@@ -144,21 +144,36 @@ export default function DogoPr() {
                 </div>
               </section>
 
-              <section className="border-t py-4">
-                <h1 className="font-bold text-xl"> 진행 과정 : Modal</h1>
+              <section className="py-24 ">
+                <h1 className="font-bold text-3xl w-full flex justify-center">
+                  진행 과정 : Modal
+                </h1>
                 <div className=" border-b py-4 text-base">
                   - 객실상세이미지 모달, "자세히보기" 모달을 구현하여 사용자에게
                   직관적인 UI 제공, 상태 관리와 애니메이션을 통해 원활한 사용자
                   경험 제공
                 </div>
+                <div className="flex flex-col items-center gap-2">
+                  <img src="/images/dogoModal.png" />
+                  <img src="/images/dogoDetailModal2.png" />
+                  <img src="/images/dogoDetailModal.png" />
+                </div>
               </section>
 
-              <section>
-                <h1 className="font-bold text-xl"> 진행 과정 : Inquiry</h1>
-                <div className="border-b py-4 text-base">
+              <section className="py-24 ">
+                <h1 className="font-bold text-3xl w-full flex justify-center">
+                  진행 과정 : Inquiry
+                </h1>
+                <div className=" py-4 text-base">
                   - 문의하기 시스템: 특정 카테고리(예: 호텔 시설, 예약, 결제 등)
                   문의를 사용자만 가능하게 구축, 관리자/사업자만 문의를
                   처리하며, 답변할 수 있는 시스템 구축
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <img src="/images/dogoInquiry.png" />
+                  <img src="/images/dogoInquiryDropdown.png" />
+                  <img src="/images/dogoInquirySuccess.png" />
+                  <img src="/images/dogoInquiryNoSignin.png" />
                 </div>
               </section>
             </div>
