@@ -22,13 +22,25 @@ const slides = [
   },
   {
     type: "project",
-    title: "두고 프로젝트",
+    title: "두고 프로젝트는 사용자의 편의를 중시합니다.1",
     description: "두고 프로젝트를 진행하며 많은 경험을 쌓았습니다.",
-    image: "/images/project1.png",
+    image: ["/images/dogohome.png", "/images/dogoList.png"],
   },
   {
     type: "project",
-    title: "듀오딩코 프로젝트",
+    // title: "두고 프로젝트는 사용자의 편의를 중시합니다.2",
+    description: "두고 프로젝트를 진행하며 많은 경험을 쌓았습니다.",
+    image: ["/images/dogoBoo.png", "/images/dogoModal.png"],
+  },
+  {
+    type: "project",
+    // title: "두고 프로젝트는 사용자의 편의를 중시합니다.3",
+    description: "두고 프로젝트를 진행하며 많은 경험을 쌓았습니다.",
+    image: "/images/dogoDetail.png",
+  },
+  {
+    type: "project",
+    title: "듀오딩코는 개발자의 학습을 도와줍니다.",
     description: "듀오딩코 프로젝트를 통해 협업과 혁신을 경험했습니다.",
     image: "/images/project2.png",
   },
@@ -36,33 +48,45 @@ const slides = [
 
 export default function HomePage() {
   const [index, setIndex] = useState(0);
+  const [headerVisible, setHeaderVisible] = useState(false);
   const totalSlides = slides.length;
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
     const vh = window.innerHeight;
-    // 예를 들어, 한 화면(100vh)마다 한 슬라이드로 계산
+    // 한 화면(100vh)마다 한 슬라이드로 계산 (최대 totalSlides-1)
     const newIndex = Math.min(Math.floor(scrollTop / vh), totalSlides - 1);
     if (newIndex !== index) {
       console.log("슬라이드 전환: ", newIndex);
       setIndex(newIndex);
     }
+    // 스크롤 영역 전체(예: totalSlides * vh)를 넘으면 헤더가 나타나도록 설정
+    if (scrollTop >= totalSlides * vh) {
+      if (!headerVisible) setHeaderVisible(true);
+    } else {
+      if (headerVisible) setHeaderVisible(false);
+    }
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    // 페이지 로드시 현재 스크롤 위치에 맞춰 한 번 실행
+    // 페이지 로드시 한 번 실행
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [index]);
+  }, [index, headerVisible]);
 
   return (
     <main>
       <section
         className="relative"
-        style={{ height: `${totalSlides * 100}vh` }}
+        style={{ height: `${(totalSlides + 1) * 100}vh` }}
       >
-        <div className="sticky top-0 h-screen flex items-center justify-center bg-black">
+        {/* sticky 설정: 스크롤시에도 화면에 고정되며, 배경색을 애니메이션으로 조절 */}
+        <motion.div
+          className="sticky top-0 h-screen flex items-center justify-center"
+          animate={{ backgroundColor: headerVisible ? "#333333" : "#000000" }}
+          transition={{ duration: 0.4 }}
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -73,7 +97,7 @@ export default function HomePage() {
               className="text-center px-6"
             >
               {slides[index].type === "phrase" ? (
-                <h1 className="text-white text-3xl md:text-5xl font-bold">
+                <h1 className="text-white text-2xl md:text-5xl font-bold">
                   {slides[index].text}
                 </h1>
               ) : (
@@ -82,19 +106,44 @@ export default function HomePage() {
                     {slides[index].title}
                   </h1>
                   <p className="mt-4 text-lg">{slides[index].description}</p>
-                  <img
-                    src={slides[index].image}
-                    alt={slides[index].title}
-                    className="mx-auto mt-4 w-full max-w-md rounded-lg shadow-lg"
-                  />
+                  {/* 이미지 렌더링 부분: image 필드가 배열이면 모두 map으로 표시 */}
+                  {Array.isArray(slides[index].image) ? (
+                    slides[index].image.map((img, i) => (
+                      <img
+                        key={i}
+                        src={img}
+                        alt={`${slides[index].title} ${i + 1}`}
+                        className="mx-auto mt-4 w-full max-w-md rounded-lg shadow-lg"
+                      />
+                    ))
+                  ) : (
+                    <img
+                      src={slides[index].image}
+                      alt={slides[index].title}
+                      className="mx-auto mt-4 w-full max-w-md rounded-lg shadow-lg"
+                    />
+                  )}
                 </div>
               )}
             </motion.div>
           </AnimatePresence>
-        </div>
+        </motion.div>
       </section>
       <>
-        <Header />
+        {/* 헤더: 스크롤 영역을 넘으면 애니메이션으로 나타남 */}
+        <AnimatePresence>
+          {headerVisible && (
+            <motion.div
+              className="sticky top-0 z-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              <Header />
+            </motion.div>
+          )}
+        </AnimatePresence>
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
