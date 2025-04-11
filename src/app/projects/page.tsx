@@ -19,7 +19,7 @@ export default function HomePage() {
 
   useEffect(() => {
     if (index < phrases.length) {
-      const timer = setTimeout(() => setIndex(index + 1), 1800);
+      const timer = setTimeout(() => setIndex(index + 1), 2500);
       return () => clearTimeout(timer);
     } else {
       const done = setTimeout(() => setIsFinished(true), 300);
@@ -30,7 +30,7 @@ export default function HomePage() {
   return (
     <main className={`${!isFinished ? "h-screen overflow-hidden" : ""}`}>
       {!isFinished ? (
-        <div className="relative w-full h-screen overflow-hidden">
+        <div className="relative w-full h-screen overflow-hidden ">
           <video
             className="absolute top-0 left-0 w-full h-full object-cover"
             src="/intro.mp4"
@@ -56,6 +56,7 @@ export default function HomePage() {
           </div>
         </div>
       ) : (
+        // </div>
         <>
           <Header />
           <motion.section

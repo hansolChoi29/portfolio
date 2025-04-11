@@ -11,7 +11,12 @@ export default function DogoCard({ onClick }: Props) {
       <div className="transition-opacity duration-300 group-hover:opacity-0">
         <img src="/dogo.png" alt="두고 프로젝트" />
         <h3 className="text-xl font-semibold mb-2">dogo project</h3>
-        <p className="text-sm text-gray-500">호텔 예약 플랫폼</p>
+        <p className="text-sm text-gray-500">
+          두고 프로젝트는 호텔 예약 관리 플랫폼으로, 사용자들이 편리하게 호텔
+          예약을 진행하고 관리할 수 있는 웹 애플리케이션입니다. 이 프로젝트는
+          반응형 웹 디자인을 적용하여 다양한 디바이스에서 원활하게 사용할 수
+          있도록 개발되었습니다.
+        </p>
       </div>
 
       <div className="absolute inset-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white z-10">

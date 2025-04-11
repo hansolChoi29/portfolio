@@ -19,7 +19,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-pretendard">{children}</body>
+      <body className="font-pretendard scroll-hidden">{children}</body>
     </html>
   );
 }
