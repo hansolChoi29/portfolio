@@ -36,7 +36,7 @@ export default function DogoPr() {
 
           <div className="flex flex-col  items-center ">
             <div className="flex flex-col  text-lg text-gray-700 w-[800px]">
-              <section className="border-b py-4">
+              <section className="border px-4 py-4 font-bold">
                 <p>Frontend : React, Next.js, TypeScript, Tailwind CSS</p>
                 <p>Data Fetching : React Query</p>
                 <p>Database : Supabase</p>
@@ -78,23 +78,27 @@ export default function DogoPr() {
                 </p>
               </section>
 
-              <section className="py-4">
-                <h1 className="font-bold text-xl">진행 과정 : Auth</h1>
-                <div>
+              <section className="py-24">
+                <h1 className="font-bold text-3xl w-full flex justify-center">
+                  진행 과정 : Auth
+                </h1>
+                <div className="flex flex-col gap-2">
                   <p className="font-bold text-xl">- 로그인 페이지</p>
                   <p className="text-base">
                     유효성 검사를 사용하여 에러 메시지를 나타내고, 로그인 성공
                     시 메인 페이지로 리디렉션
                   </p>
+                  <img src="/images/dogoSingin.png" />
                 </div>
-                <div>
+                <div className="flex flex-col gap-2">
                   <p className="font-bold text-xl">- 회원가입 페이지</p>
                   <p className="text-base">
                     RBAC을 적용, 이메일 형식과 비밀번호 정책을 엄격히 검증하여
                     정확한 회원가입 보장
                   </p>
+                  <img src="/images/dogoSignup.png" />
                 </div>
-                <div>
+                <div className="flex flex-col gap-2">
                   <p className="font-bold text-xl">- 소셜 로그인</p>
                   <p className="text-base">
                     카카오 로그인을 통해 사용자 인증을 간편하게 진행하며,
@@ -102,22 +106,41 @@ export default function DogoPr() {
                     (이를 통해 별도의 회원가입 절차 없이 바로 서비스 이용이
                     가능하며, 사용자 경험을 더욱 간편하게 개선)
                   </p>
+                  <img src="/images/dogoKakaoSignin.png" />
                 </div>
 
-                <div>
-                  <p className="font-bold text-xl">- 아이디 찾기</p>
+                <div className="flex flex-col gap-2">
+                  <p className=" font-bold text-xl ">- 아이디 찾기</p>
                   <p className="text-base">
                     사용자가 이름과 전화번호를 입력하면, Supabase의 사용자
                     정보와 일치하는 경우 해당 이메일을 찾아 반환하도록 구현
                   </p>
+                  <div className="flex flex-col items-center">
+                    <img src="/images/dogoFindId.png" />
+                    <img src="/images/dogoFindId2.png" className="w-96" />
+                    <img src="/images/dogoFindIdFinal.png" className="w-96" />
+                  </div>
                 </div>
-                <div>
+                <div className=" flex flex-col gap-2">
                   <p className="font-bold text-xl">- 비밀번호 재설정</p>
                   <p className="text-base">
                     사용자가 비밀번호를 잊어버린 경우, OTP 인증을 통해
                     비밀번호를 안전하게 재설정 가능하며, 실시간 유효성 검사를
                     적용
                   </p>
+
+                  <div className="flex flex-col items-center">
+                    <img src="/images/dogoFindPassword.png" />
+                    <img src="/images/dogoNewPassword.png" className="w-96" />
+                    <img
+                      src="/images/dogoFindPasswordOtp.png"
+                      className="w-96"
+                    />
+                    <img
+                      src="/images/dogoFindPasswordFinal.png"
+                      className="w-96"
+                    />
+                  </div>
                 </div>
               </section>
 
