@@ -53,6 +53,9 @@ export default function DogoPr() {
               </section>
 
               <section className="border-b py-4">
+                <h1 className="my-24 font-bold text-3xl w-full flex justify-center">
+                  주요 역할
+                </h1>
                 <p className="font-bold text-xl">
                   로그인 및 회원가입 기능 구현 - zustand 이용하여 유저정보 관리
                 </p>
