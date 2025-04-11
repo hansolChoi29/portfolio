@@ -51,7 +51,8 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className="min-h-screen bg-white p-10"
           >
-            <h1 className="text-4xl font-bold">프론트엔드 개발자 </h1>
+            <h1 className="text-4xl ">프론트엔드 개발자 </h1>
+            <h1 className="text-4xl font-pretendard">프론트엔드 개발자 </h1>
           </motion.section>
         </>
       )}
