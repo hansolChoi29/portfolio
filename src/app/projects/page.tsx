@@ -54,12 +54,16 @@ export default function HomePage() {
             className="flex gap-8 min-h-screen bg-white p-10 justify-center items-center"
           >
             <div>
-              <h1 className="text-4xl ">프론트엔드 개발자 </h1>
+              <h1 className="text-4xl flex w-full justify-center p-2">
+                두고 프로젝트{" "}
+              </h1>
               <DogoPr />
             </div>
 
             <div>
-              <h1 className="text-4xl font-pretendard">프론트엔드 개발자 </h1>
+              <h1 className="text-4xl font-pretendard flex w-full p-2 justify-center">
+                듀오딩코 프로젝트{" "}
+              </h1>
               <DuodincoPrPage />
             </div>
           </motion.section>

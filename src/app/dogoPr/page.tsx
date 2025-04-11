@@ -28,7 +28,7 @@ export default function DogoPr() {
             >
               ✕
             </button>
-            <h2 className="text-3xl font-bold mb-4">두고 프로젝트</h2>
+            <h2 className="text-3xl font-bold mb-4">dogo project</h2>
             <p className="text-lg text-gray-700">
               호텔 예약 플랫폼으로, 사용자 인증과 예약 관리를 구현했습니다.
               React와 Next.js 기반이며, Supabase Auth와 Zustand를 활용하여
