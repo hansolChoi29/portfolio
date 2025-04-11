@@ -88,7 +88,7 @@ export default function HomePage() {
         {/* sticky 설정: 스크롤시에도 화면에 고정되며, 배경색을 애니메이션으로 조절 */}
         <motion.div
           className="sticky top-0 h-screen flex items-center justify-center"
-          animate={{ backgroundColor: headerVisible ? "#333333" : "#000000" }}
+          animate={{ backgroundColor: headerVisible ? "#282828" : "#000000" }}
           transition={{ duration: 0.4 }}
         >
           <AnimatePresence mode="wait">
@@ -142,7 +142,7 @@ export default function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.6 }}
             >
               <Header />
             </motion.div>
@@ -151,21 +151,15 @@ export default function HomePage() {
         {/* 프로젝트 섹션: 섹션의 약 50%가 뷰포트에 들어오면 나타남 */}
         <motion.section
           initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 10 }}
+          whileInView={{ opacity: 1, y: 0.1 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 1 }}
-          className="flex gap-8 min-h-screen bg-white p-10 justify-center items-center"
+          className="flex gap-8 min-h-screen bg-[#202020] p-10 justify-center items-center"
         >
           <div>
-            <h1 className="text-4xl flex w-full justify-center p-2">
-              두고 프로젝트
-            </h1>
             <DogoPr />
           </div>
           <div>
-            <h1 className="text-4xl flex w-full justify-center p-2">
-              듀오딩코 프로젝트
-            </h1>
             <DuodincoPrPage />
           </div>
         </motion.section>

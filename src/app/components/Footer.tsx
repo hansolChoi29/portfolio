@@ -5,16 +5,16 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className=" w-full py-10 px-6 text-left ">
+    <footer className=" w-full bg-[#202020] py-10 px-6 text-left ">
       <div className="flex items-end  border-t p-4 flex-col space-y-3 text-lg text-gray-800">
         <div className="flex gap-2">
-          <p className="text-gray-600">전화번호 </p>
-          <p>010-2915-2931</p>
+          <p className="text-white">전화번호 </p>
+          <p className="text-white">010-2915-2931</p>
         </div>
 
         <div className="flex gap-2">
-          <p className="text-gray-600">E-mail </p>
-          <p>ggksthf29@gmail.com</p>
+          <p className="text-white">E-mail </p>
+          <p className="text-white">ggksthf29@gmail.com</p>
         </div>
 
         <div className="flex ">
@@ -32,7 +32,7 @@ export default function Footer() {
             href="https://instagram.com/_hxnxol_"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-red-500 mr-3"
+            className="text-white mr-3"
           >
             <img
               className="w-10"

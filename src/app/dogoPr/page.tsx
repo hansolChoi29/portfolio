@@ -13,7 +13,16 @@ export default function DogoPr() {
   useEffect(() => {
     setMounted(true);
   }, []);
-
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
   const modalContent = (
     <AnimatePresence>
       {open && (
