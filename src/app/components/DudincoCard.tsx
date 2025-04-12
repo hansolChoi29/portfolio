@@ -9,7 +9,7 @@ export default function DuodincoCard({ onClick }: Props) {
       className="w-[660px] h-[320px] cursor-pointer border rounded-xl shadow-lg   hover: transition relative overflow-hidden group"
     >
       <div className="transition-opacity duration-300 group-hover:opacity-0">
-        <img src="/duodincoproject.png" alt="두고 프로젝트" />
+        <img src="/images/cards/duodincoproject.png" alt="두고 프로젝트" />
         <div className="p-4">
           <h3 className="text-3xl font-semibold mb-2 ">Duo_Dingco project</h3>
           <p className="text-xl text-gray-500">

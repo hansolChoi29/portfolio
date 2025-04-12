@@ -9,7 +9,11 @@ export default function DogoCard({ onClick }: Props) {
       className="w-[660px] h-[320px]  cursor-pointer border rounded-xl shadow-lg hover: transition relative overflow-hidden group"
     >
       <div className="transition-opacity duration-300 group-hover:opacity-0">
-        <img src="/dogoproject.png" alt="두고 프로젝트" className="w-[800px]" />
+        <img
+          src="/images/cards/dogoproject.png"
+          alt="두고 프로젝트"
+          className="w-[800px]"
+        />
         <div className="p-4">
           <h3 className="text-3xl text-white font-semibold mb-2">
             DoGo_project

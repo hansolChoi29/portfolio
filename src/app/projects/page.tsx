@@ -28,17 +28,17 @@ const slides = [
     type: "project",
     title: "Dogo-project",
     description: "숙박기간을 지정하여 호텔을 검색할 수 있습니다.",
-    image: "/images/dogohome.png",
+    image: "/images/dogo/dogohome.png",
   },
   {
     type: "project",
     description: "필터를 이용하여 둘러볼 수 있습니다.",
-    image: "/images/dogoList.png",
+    image: "/images/dogo/dogoList.png",
   },
   {
     type: "project",
     description: "객실을 자세히 확인하고 예약할 수 있습니다.",
-    image: ["/images/dogoModal.png", "/images/dogoBoo.png"],
+    image: ["/images/dogo/dogoModal.png", "/images/dogo/dogoBoo.png"],
   },
 ];
 
@@ -132,6 +132,7 @@ export default function HomePage() {
               transition={{ delay: 2, duration: 0.5 }}
               className="absolute bottom-10 left-0 right-0 text-center text-white text-lg animate-bounce"
             >
+              {/* animate-bounce: 위아래 바운스 바운스 */}
               스크롤을 내려주세요
             </motion.div>
           )}

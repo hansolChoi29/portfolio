@@ -100,7 +100,7 @@ export default function DogoPr() {
                     유효성 검사를 사용하여 에러 메시지를 나타내고, 로그인 성공
                     시 메인 페이지로 리디렉션
                   </p>
-                  <img src="/images/dogoSingin.png" />
+                  <img src="/images/dogo/dogoSignin.png" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <p className="font-bold text-xl">- 회원가입 페이지</p>
@@ -108,7 +108,7 @@ export default function DogoPr() {
                     RBAC을 적용, 이메일 형식과 비밀번호 정책을 엄격히 검증하여
                     정확한 회원가입 보장
                   </p>
-                  <img src="/images/dogoSignup.png" />
+                  <img src="/images/dogo/dogoSignup.png" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <p className="font-bold text-xl">- 소셜 로그인</p>
@@ -118,7 +118,7 @@ export default function DogoPr() {
                     (이를 통해 별도의 회원가입 절차 없이 바로 서비스 이용이
                     가능하며, 사용자 경험을 더욱 간편하게 개선)
                   </p>
-                  <img src="/images/dogoKakaoSignin.png" />
+                  <img src="/images/dogo/dogoKakaoSignin.png" />
                 </div>
 
                 <div className="flex flex-col gap-2">
@@ -128,9 +128,12 @@ export default function DogoPr() {
                     정보와 일치하는 경우 해당 이메일을 찾아 반환하도록 구현
                   </p>
                   <div className="flex flex-col items-center gap-2">
-                    <img src="/images/dogoFindId.png" />
-                    <img src="/images/dogoFindId2.png" className="w-96" />
-                    <img src="/images/dogoFindIdFinal.png" className="w-96" />
+                    <img src="/images/dogo/dogoFindId.png" />
+                    <img src="/images/dogo/dogoFindId2.png" className="w-96" />
+                    <img
+                      src="/images/dogo/dogoFindIdFinal.png"
+                      className="w-96"
+                    />
                   </div>
                 </div>
                 <div className=" flex flex-col gap-2">
@@ -142,14 +145,17 @@ export default function DogoPr() {
                   </p>
 
                   <div className="flex flex-col items-center gap-2">
-                    <img src="/images/dogoFindPassword.png" />
-                    <img src="/images/dogoNewPassword.png" className="w-96" />
+                    <img src="/images/dogo/dogoFindPassword.png" />
                     <img
-                      src="/images/dogoFindPasswordOtp.png"
+                      src="/images/dogo/dogoNewPassword.png"
                       className="w-96"
                     />
                     <img
-                      src="/images/dogoFindPasswordFinal.png"
+                      src="/images/dogo/dogoFindPasswordOtp.png"
+                      className="w-96"
+                    />
+                    <img
+                      src="/images/dogo/dogoFindPasswordFinal.png"
                       className="w-96"
                     />
                   </div>
@@ -161,14 +167,14 @@ export default function DogoPr() {
                   진행 과정 : Modal
                 </h1>
                 <div className=" border-b py-4 text-base">
-                  - 객실상세이미지 모달, "자세히보기" 모달을 구현하여 사용자에게
+                  - 객실상세이미지 모달, 자세히보기 모달을 구현하여 사용자에게
                   직관적인 UI 제공, 상태 관리와 애니메이션을 통해 원활한 사용자
                   경험 제공
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <img src="/images/dogoModal.png" />
-                  <img src="/images/dogoDetailModal2.png" />
-                  <img src="/images/dogoDetailModal.png" />
+                  <img src="/images/dogo/dogoModal.png" />
+                  <img src="/images/dogo/dogoDetailModal2.png" />
+                  <img src="/images/dogo/dogoDetailModal.png" />
                 </div>
               </section>
 
@@ -182,10 +188,10 @@ export default function DogoPr() {
                   처리하며, 답변할 수 있는 시스템 구축
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <img src="/images/dogoInquiry.png" />
-                  <img src="/images/dogoInquiryDropdown.png" />
-                  <img src="/images/dogoInquirySuccess.png" />
-                  <img src="/images/dogoInquiryNoSignin.png" />
+                  <img src="/images/dogo/dogoInquiry.png" />
+                  <img src="/images/dogo/dogoInquiryDropdown.png" />
+                  <img src="/images/dogo/dogoInquirySuccess.png" />
+                  <img src="/images/dogo/dogoInquiryNoSignin.png" />
                 </div>
               </section>
             </div>
