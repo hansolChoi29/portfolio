@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import DogoCard from "../components/DogoCard";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function DogoPr() {
   const [open, setOpen] = useState(false);
@@ -100,8 +101,12 @@ export default function DogoPr() {
                     유효성 검사를 사용하여 에러 메시지를 나타내고, 로그인 성공
                     시 메인 페이지로 리디렉션
                   </p>
-                  <img
+                  <Image
                     src="/images/dogo/dogoSignin.png"
+                    alt="dogoSignin"
+                    width={800}
+                    height={500}
+                    layout="responsive"
                     className="rounded-2xl"
                   />
                 </div>
@@ -111,8 +116,12 @@ export default function DogoPr() {
                     RBAC을 적용, 이메일 형식과 비밀번호 정책을 엄격히 검증하여
                     정확한 회원가입 보장
                   </p>
-                  <img
+                  <Image
                     src="/images/dogo/dogoSignup.png"
+                    alt="dogoSignup"
+                    width={800}
+                    height={500}
+                    layout="responsive"
                     className="rounded-2xl"
                   />
                 </div>
@@ -124,8 +133,12 @@ export default function DogoPr() {
                     (이를 통해 별도의 회원가입 절차 없이 바로 서비스 이용이
                     가능하며, 사용자 경험을 더욱 간편하게 개선)
                   </p>
-                  <img
+                  <Image
                     src="/images/dogo/dogoKakaoSignin.png"
+                    alt="dogoKakaoSignin"
+                    width={900}
+                    height={800}
+                    layout="fixed"
                     className="rounded-2xl"
                   />
                 </div>
@@ -136,18 +149,35 @@ export default function DogoPr() {
                     사용자가 이름과 전화번호를 입력하면, Supabase의 사용자
                     정보와 일치하는 경우 해당 이메일을 찾아 반환하도록 구현
                   </p>
+
                   <div className="flex flex-col items-center gap-2">
-                    <img
+                    <Image
                       src="/images/dogo/dogoFindId.png"
+                      alt="dogoFindId"
+                      width={800}
+                      height={500}
+                      layout="responsive"
                       className="rounded-2xl"
                     />
-                    <img src="/images/dogo/dogoFindId2.png" className="w-96" />
-                    <img
+                    <Image
+                      src="/images/dogo/dogoFindId2.png"
+                      alt="dogoFindId2"
+                      width={400}
+                      height={100}
+                      layout="fixed"
+                      className="rounded-2xl"
+                    />
+                    <Image
                       src="/images/dogo/dogoFindIdFinal.png"
-                      className="w-96"
+                      alt="dogoFindIdFinal"
+                      width={400}
+                      height={100}
+                      layout="fixed"
+                      className="rounded-2xl"
                     />
                   </div>
                 </div>
+
                 <div className=" flex flex-col gap-2">
                   <p className="font-bold text-xl">- 비밀번호 재설정</p>
                   <p className="text-base">
@@ -157,21 +187,37 @@ export default function DogoPr() {
                   </p>
 
                   <div className="flex flex-col items-center gap-2">
-                    <img
+                    <Image
                       src="/images/dogo/dogoFindPassword.png"
+                      alt="dogoFindPassword"
+                      width={800}
+                      height={500}
+                      layout="responsive"
                       className="rounded-2xl"
                     />
-                    <img
+                    <Image
                       src="/images/dogo/dogoNewPassword.png"
-                      className="w-96"
+                      alt="dogoNewPassword"
+                      width={400}
+                      height={100}
+                      layout="fixed"
+                      className="rounded-2xl"
                     />
-                    <img
+                    <Image
                       src="/images/dogo/dogoFindPasswordOtp.png"
-                      className="w-96"
+                      alt="dogoFindPasswordOtp"
+                      width={400}
+                      height={100}
+                      layout="fixed"
+                      className="rounded-2xl"
                     />
-                    <img
+                    <Image
                       src="/images/dogo/dogoFindPasswordFinal.png"
-                      className="w-96"
+                      alt="dogoFindPasswordFinal"
+                      width={400}
+                      height={100}
+                      layout="fixed"
+                      className="rounded-2xl"
                     />
                   </div>
                 </div>
@@ -187,16 +233,29 @@ export default function DogoPr() {
                   경험 제공
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <img
+                  <Image
                     src="/images/dogo/dogoModal.png"
+                    alt="dogoModal"
+                    width={800}
+                    height={500}
+                    layout="responsive"
                     className="rounded-2xl"
                   />
-                  <img
-                    src="/images/dogo/dogoDetailModal2.png"
-                    className="rounded-2xl"
-                  />
-                  <img
+
+                  <Image
                     src="/images/dogo/dogoDetailModal.png"
+                    alt="dogoDetailModal"
+                    height={500}
+                    width={800}
+                    layout="responsive"
+                    className="rounded-2xl"
+                  />
+                  <Image
+                    src="/images/dogo/dogoDetailModal2.png"
+                    alt="dogoDetailModal2"
+                    width={400}
+                    height={300}
+                    layout="fixed"
                     className="rounded-2xl"
                   />
                 </div>
@@ -212,20 +271,36 @@ export default function DogoPr() {
                   처리하며, 답변할 수 있는 시스템 구축
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <img
+                  <Image
                     src="/images/dogo/dogoInquiry.png"
+                    alt="dogoInquiry"
+                    width={800}
+                    height={500}
+                    layout="responsive"
                     className="rounded-2xl"
                   />
-                  <img
+                  <Image
                     src="/images/dogo/dogoInquiryDropdown.png"
+                    alt="dogoInquiryDropdown"
+                    width={400}
+                    height={800}
+                    layout="fixed"
                     className="rounded-2xl"
                   />
-                  <img
+                  <Image
                     src="/images/dogo/dogoInquirySuccess.png"
+                    alt="dogoInquirySuccess"
+                    width={400}
+                    height={800}
+                    layout="fixed"
                     className="rounded-2xl"
                   />
-                  <img
+                  <Image
                     src="/images/dogo/dogoInquiryNoSignin.png"
+                    alt="dogoInquiryNoSignin"
+                    width={400}
+                    height={950}
+                    layout="fixed"
                     className="rounded-2xl"
                   />
                 </div>

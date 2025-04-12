@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import DuodincoCard from "../components/DudincoCard";
 import ReactDOM from "react-dom";
+import Image from "next/image";
 
 export default function DuodincoPrPage() {
   const [open, setOpen] = useState(false);
@@ -94,8 +95,12 @@ export default function DuodincoPrPage() {
                   삭제하여 개인 학습 관리 API를 통한 데이터 패칭 및 JSON 파싱과
                   함께, 로딩 및 에러 상태를 관리하여 사용자 경험을 극대화
                 </div>
-                <img
+                <Image
                   src="/images/duodingco/duodingcoLearning.png"
+                  alt="duodingcoLearning"
+                  width={800}
+                  height={500}
+                  layout="responsive"
                   className="rounded-2xl"
                 />
               </section>
@@ -114,20 +119,36 @@ export default function DuodincoPrPage() {
                   스페이스바로 카드 탐색 및 뒤집기를 지원
                 </div>
                 <div className="flex flex-col gap-2 ">
-                  <img
+                  <Image
                     src="/images/duodingco/duodingcoLearningDetail.png"
+                    alt="duodingcoLearningDetail"
+                    width={800}
+                    height={500}
+                    layout="responsive"
                     className="rounded-2xl"
                   />
-                  <img
+                  <Image
                     src="/images/duodingco/duodingcoLearningDeatailMove.png"
+                    alt="duodingcoLearningDeatailMove"
+                    width={800}
+                    height={500}
+                    layout="responsive"
                     className="rounded-2xl"
                   />
-                  <img
+                  <Image
                     src="/images/duodingco/duodingcoLearningEnd.png"
+                    alt="duodingcoLearningEnd"
+                    width={800}
+                    height={500}
+                    layout="responsive"
                     className="rounded-2xl"
                   />
-                  <img
+                  <Image
                     src="/images/duodingco/duodingcoLearningAlert.png"
+                    alt="duodingcoLearningEnd"
+                    width={800}
+                    height={500}
+                    layout="responsive"
                     className="rounded-2xl"
                   />
                 </div>
@@ -146,8 +167,12 @@ export default function DuodincoPrPage() {
                   디자인을 적용하여 다양한 디바이스에서 지원하며, API 호출 후
                   상태 업데이트를 통해 데이터 동기화 처리를 안정적으로 수행
                 </div>
-                <img
+                <Image
                   src="/images/duodingco/duodingcoHot.png"
+                  alt="duodingcoHot"
+                  width={800}
+                  height={500}
+                  layout="responsive"
                   className="rounded-2xl"
                 />
               </section>
