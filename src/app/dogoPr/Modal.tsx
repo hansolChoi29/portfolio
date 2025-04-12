@@ -96,20 +96,21 @@ export default function DogoPr() {
                 </h1>
                 <div className="border-b py-4">
                   <p className="font-bold sm:text-xl text-base">
-                    로그인 및 회원가입 기능 구현 - zustand 이용하여 유저정보
-                    관리
+                    로그인 / 회원가입 - zustand 이용하여 유저정보 관리
                   </p>
                   <p className="sm:text-base text-sm">
-                    Supabase를 활용하여 로그인, 회원가입 기능을 구현하고, 인증된
-                    사용자만 이용가능
+                    Supabase를 활용하여 로그인, 회원가입 기능을 구현하고
+                    serverAction 이용하여 클라이언트와 서버 간의 요청을 원활하게
+                    해주었습니다.
                   </p>
                 </div>
                 <div className="border-b py-4">
                   <p className="font-bold sm:text-xl text-base">
-                    아이디 찾기 및 비밀번호 재설정 - otp 이용
+                    아이디 찾기 / 비밀번호 재설정 - otp 이용
                   </p>
                   <p className="sm:text-base text-sm">
-                    사용자가 계정 복구 과정에서 불편함 개선
+                    유저정보를 이용하여 계정을 찾거나 재설정해줄 수 있도록
+                    구현해 주었습니다.
                   </p>
                 </div>
                 <div className="border-b py-4">
@@ -118,7 +119,7 @@ export default function DogoPr() {
                   </p>
                   <p className="sm:text-base text-sm">
                     사용자가 예약을 진행하면서 필요한 정보를 즉시 확인할 수
-                    있도록 모달을 활용
+                    있도록 모달을 활용하여 객실정보를 알려주었습니다.
                   </p>
                 </div>
                 <div className="py-4">
@@ -126,23 +127,20 @@ export default function DogoPr() {
                     문의하기 기능 구현
                   </p>
                   <p className="sm:text-base text-sm">
-                    사용자에게 편리한 피드백 채널을 제공하여 문제를 신속하게
-                    해결 가능
+                    데이터베이스 테이블에 문의내용과 답변이 저장되는 형식으로,
+                    user만 문의가 가능하도록 하였고 마이페이지에서 확인
+                    가능합니다.
                   </p>
                 </div>
               </motion.section>
 
-              <section className="py-24">
+              <section className="flex flex-col gap-24 py-24">
                 <h1 className="font-bold sm:text-3xl text-xl w-full flex justify-center">
                   진행 과정 : Auth
                 </h1>
-                <div className="flex flex-col gap-2">
-                  <p className="font-bold sm:text-xl text-base">
-                    - 로그인 페이지
-                  </p>
-                  <p className="sm:text-base text-sm">
-                    유효성 검사를 사용하여 에러 메시지를 나타내고, 로그인 성공
-                    시 메인 페이지로 리디렉션
+                <div className="flex flex-col gap-2 ">
+                  <p className="font-bold sm:text-xl text-base ">
+                    로그인 페이지
                   </p>
                   <Image
                     src="/images/dogo/dogoSignin.png"
@@ -153,14 +151,15 @@ export default function DogoPr() {
                     layout="responsive"
                     className="rounded-2xl w-full max-w-[800px]"
                   />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <p className="font-bold sm:text-xl text-base">
-                    - 회원가입 페이지
-                  </p>
                   <p className="sm:text-base text-sm">
-                    RBAC을 적용, 이메일 형식과 비밀번호 정책을 엄격히 검증하여
-                    정확한 회원가입 보장
+                    user 테이블의 role 칼럼을 이용하여 user, bussiness 인지
+                    구분하도록 하였습니다. user일 경우, 소셜 로그인 가능하게
+                    하여 사용자의 편의를 신경 썼습니다.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2 ">
+                  <p className="font-bold sm:text-xl text-base">
+                    회원가입 페이지
                   </p>
                   <Image
                     src="/images/dogo/dogoSignup.png"
@@ -171,6 +170,23 @@ export default function DogoPr() {
                     layout="responsive"
                     className="rounded-2xl w-full max-w-[800px]"
                   />
+                  <p className="sm:text-base text-sm">
+                    RBAC을 적용하여 일반회원과 사업자 회원가입을 구분하였습니다.
+                  </p>
+
+                  <Image
+                    src="/images/dogo/dogoSignUpErrMess.png"
+                    alt="dogoSignUpErrMess"
+                    width={800}
+                    height={500}
+                    style={{ height: "auto" }}
+                    layout="responsive"
+                    className="rounded-2xl w-full max-w-[800px]"
+                  />
+                  <p className="sm:text-base text-sm">
+                    이메일 형식과 비밀번호 정책을 엄격히 검증하여 정확한
+                    회원가입 보장하였습니다.
+                  </p>
                 </div>
                 <div className="flex flex-col gap-2">
                   <p className="font-bold sm:text-xl text-base">
@@ -282,15 +298,15 @@ export default function DogoPr() {
                 </div>
               </section>
 
-              <section className="py-24">
-                <h1 className="font-bold sm:text-3xl text-xl w-full flex justify-center">
+              <section className="py-24 ">
+                <h1 className="font-bold mb-4 sm:text-3xl text-xl w-full flex justify-center">
                   진행 과정 : Modal
                 </h1>
-                <div className="sm:text-base text-sm">
+                <p className="sm:text-base text-sm mb-4">
                   - 객실상세이미지 모달, 자세히보기 모달을 구현하여 사용자에게
                   직관적인 UI 제공, 상태 관리와 애니메이션을 통해 원활한 사용자
                   경험 제공
-                </div>
+                </p>
                 <div className="flex flex-col items-center gap-2">
                   <Image
                     src="/images/dogo/dogoModal.png"
@@ -323,10 +339,10 @@ export default function DogoPr() {
               </section>
 
               <section className="py-24">
-                <h1 className="font-bold sm:text-3xl text-xl w-full flex justify-center">
+                <h1 className="font-bold mb-4 sm:text-3xl text-xl w-full flex justify-center">
                   진행 과정 : Inquiry
                 </h1>
-                <div className="sm:text-base text-sm">
+                <div className="sm:text-base text-sm mb-4">
                   - 문의하기 시스템: 특정 카테고리(예: 호텔 시설, 예약, 결제 등)
                   문의를 사용자만 가능하게 구축, 관리자/사업자만 문의를
                   처리하며, 답변할 수 있는 시스템 구축

@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { slides } from "../components/SlidesMockData";
-import DuodincoPrPage from "../duodingcoPr/page";
+import DuodincoPrPage from "../duodingcoPr/Modal";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import DogoPr from "../dogoPr/page";
+import DogoPr from "../dogoPr/Modal";
 import Image from "next/image";
 
 export default function HomePage() {
