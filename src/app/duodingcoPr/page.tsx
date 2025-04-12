@@ -10,6 +10,21 @@ export default function DuodincoPrPage() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   const modalContent = (
     <AnimatePresence>
       {open && (
@@ -79,6 +94,10 @@ export default function DuodincoPrPage() {
                   삭제하여 개인 학습 관리 API를 통한 데이터 패칭 및 JSON 파싱과
                   함께, 로딩 및 에러 상태를 관리하여 사용자 경험을 극대화
                 </div>
+                <img
+                  src="/images/duodingco/duodingcoLearning.png"
+                  className="rounded-2xl"
+                />
               </section>
 
               <section className="py-24 ">
@@ -93,6 +112,24 @@ export default function DuodincoPrPage() {
                   3D 효과로 전환하여 학습 카드에 플립 카드 애니메이션을 적용해
                   집중도를 향상시키고, 키보드 이벤트를 활용하여 좌우 화살표와
                   스페이스바로 카드 탐색 및 뒤집기를 지원
+                </div>
+                <div className="flex flex-col gap-2 ">
+                  <img
+                    src="/images/duodingco/duodingcoLearningDetail.png"
+                    className="rounded-2xl"
+                  />
+                  <img
+                    src="/images/duodingco/duodingcoLearningDeatailMove.png"
+                    className="rounded-2xl"
+                  />
+                  <img
+                    src="/images/duodingco/duodingcoLearningEnd.png"
+                    className="rounded-2xl"
+                  />
+                  <img
+                    src="/images/duodingco/duodingcoLearningAlert.png"
+                    className="rounded-2xl"
+                  />
                 </div>
               </section>
 
@@ -109,6 +146,10 @@ export default function DuodincoPrPage() {
                   디자인을 적용하여 다양한 디바이스에서 지원하며, API 호출 후
                   상태 업데이트를 통해 데이터 동기화 처리를 안정적으로 수행
                 </div>
+                <img
+                  src="/images/duodingco/duodingcoHot.png"
+                  className="rounded-2xl"
+                />
               </section>
             </div>
           </div>
