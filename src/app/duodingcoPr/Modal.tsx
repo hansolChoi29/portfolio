@@ -42,26 +42,26 @@ export default function DuodincoPrPage() {
       {open && (
         <motion.div
           ref={modalRef}
-          className="fixed inset-0 z-50 bg-white p-10 overflow-auto"
+          className="fixed inset-0 z-[9999] bg-[#efefef] sm:p-12 p-16 overflow-auto"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
           <div className="relative flex items-center justify-center py-8">
-            <h2 className="text-3xl font-bold my-24">duodingco</h2>
+            <h2 className="sm:text-3xl font-bold my-24">duodingco</h2>
             <button
               onClick={() => setOpen(false)}
-              className="absolute right-5 text-lg font-bold mr-24"
+              className="absolute  text-lg font-bold mr-24 sm:absolute right-5 sm:right-[10px] sm:text-lx"
             >
               ✕
             </button>
           </div>
           <div className="flex flex-col  items-center ">
-            <div className="flex flex-col  text-lg text-gray-700 w-[800px]">
+            <div className="flex flex-col text-sm sm:text-xl  text-gray-700 w-full max-w-[800px]">
               <motion.section
                 {...scrollAnimationProps}
-                className="flex flex-col gap-2 border px-4 py-4 font-bold"
+                className="flex flex-col border rounded-xl border-black px-4 py-4 font-bold gap-2"
               >
                 <p>
                   Frontend : React, Next.js, TypeScript, Tailwind CSS, Zustand
@@ -91,37 +91,39 @@ export default function DuodincoPrPage() {
                 </p>
               </motion.section>
               <motion.section {...scrollAnimationProps}>
-                <h1 className="my-24 font-bold text-3xl w-full flex justify-center">
+                <h1 className="my-24 font-bold sm:text-3xl text-xl  w-full flex justify-center">
                   주요 역할
                 </h1>
-                <div className="border-b pb-4">
-                  <p className="font-bold text-xl">단어 학습 기능 제공</p>
-                  <p>
+                <div className="border-b border-black py-4">
+                  <p className="font-bold sm:text-xl text-base">
+                    단어 학습 기능 제공
+                  </p>
+                  <p className="sm:text-base text-sm">
                     사용자가 단어를 학습할 수 있는 기능을 카드 형식으로 제공
                   </p>
                 </div>
-                <div className="border-b py-4">
-                  <p className="font-bold text-xl">북마크 관리</p>
-                  <p className="text-base">
+                <div className="border-b border-black py-4">
+                  <p className="font-bold sm:text-xl text-base">북마크 관리</p>
+                  <p className="sm:text-base text-sm">
                     사용자가 게시글을 북마크하여 나중에 다시 학습할 수 있도록
                     하고, 북마크 상태를 실시간으로 업데이트
                   </p>
                 </div>
-                <div className="border-b py-4">
-                  <p className="font-bold text-xl">
+                <div className="border-b border-black py-4">
+                  <p className="font-bold sm:text-xl text-base">
                     세션 관리 및 인증 시스템 구현
                   </p>
-                  <p className="text-base">
+                  <p className="sm:text-base text-sm">
                     Supabase를 활용하여 로그인 상태를 유지하고, 인증되지 않은
                     사용자는 로그인 페이지로 리디렉션
                   </p>
                 </div>
               </motion.section>
-              <section className="py-24 ">
-                <h1 className="font-bold text-3xl w-full flex justify-center">
+              <section className="flex flex-col gap-24 py-24">
+                <h1 className="font-bold sm:text-3xl text-xl w-full flex justify-center">
                   진행 과정 : 학습 리스트 페이지 (LearnListPage)
                 </h1>
-                <div className=" border-b py-4 text-base">
+                <div className=" border-b py-4 sm:text-xl text-base ">
                   사용자가 학습 카드 리스트에서 단어 목록, 작성자 정보, 단어
                   개수를 확인하고, Supabase Auth와 Zustand를 활용하여 로그인 후
                   세션을 관리하며, 동적 라우팅을 통해 상세 페이지로 이동할 수
@@ -141,10 +143,10 @@ export default function DuodincoPrPage() {
               </section>
 
               <section className="py-24 ">
-                <h1 className="font-bold text-3xl w-full flex justify-center">
+                <h1 className="font-bold sm:text-3xl text-xl w-full flex justify-center">
                   진행 과정 : 상세 페이지(LearnDetailPage)
                 </h1>
-                <div className=" border-b py-4 text-base">
+                <div className=" border-b py-4 sm:text-xl text-base ">
                   북마크 기능과 작성자 정보를 통해 상세 정보와 사용자 프로필을
                   연동 동적 세그먼트를 사용하여 URL 기반의 상세 정보를 제공하고,
                   비동기 데이터 패칭 및 에러 핸들링을 통해 안정성을 확보하며,
@@ -194,10 +196,10 @@ export default function DuodincoPrPage() {
               </section>
 
               <section className="py-24 ">
-                <h1 className="font-bold text-3xl w-full flex justify-center">
+                <h1 className="font-bold sm:text-3xl text-xl w-full flex justify-center">
                   진행 과정 : 핫러닝 페이지 (HotLearningPage)
                 </h1>
-                <div className=" py-4 text-base">
+                <div className=" border-b py-4 sm:text-xl text-base ">
                   최신 단어 집합을 실시간으로 업데이트하여 사용자가 최신 등록된
                   단어를 한눈에 확인할 수 있도록 하며, 카드형 UI를 통해 작성자
                   정보, 단어 개수, 북마크 상태 등 다양한 정보를 직관적으로 표시
