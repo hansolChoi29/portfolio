@@ -45,7 +45,11 @@ export default function Footer() {
             {/* underline */}
           </Link>
 
-          <Link href="https://winwin0219.tistory.com/">
+          <Link
+            href="https://winwin0219.tistory.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               className="w-10"
               src="   https://cdn-icons-png.flaticon.com/512/16524/16524532.png "
