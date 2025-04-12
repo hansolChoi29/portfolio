@@ -26,6 +26,8 @@ export default function Footer() {
             <img
               className="w-10"
               src="   https://cdn-icons-png.flaticon.com/512/11376/11376339.png  "
+              width={30}
+              height={30}
             />
           </Link>
           <Link
@@ -37,6 +39,8 @@ export default function Footer() {
             <img
               className="w-10"
               src="https://cdn-icons-png.flaticon.com/128/733/733558.png"
+              width={30}
+              height={30}
             />
             {/* underline */}
           </Link>
@@ -45,6 +49,8 @@ export default function Footer() {
             <img
               className="w-10"
               src="   https://cdn-icons-png.flaticon.com/512/16524/16524532.png "
+              width={30}
+              height={30}
             />
           </Link>
         </div>

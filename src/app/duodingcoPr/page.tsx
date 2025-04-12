@@ -1,13 +1,16 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import DuodincoCard from "../components/DudincoCard";
 import ReactDOM from "react-dom";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function DuodincoPrPage() {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const modalRef = useRef(null);
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -15,6 +18,7 @@ export default function DuodincoPrPage() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -26,10 +30,18 @@ export default function DuodincoPrPage() {
     };
   }, [open]);
 
+  const scrollAnimationProps = {
+    initial: { opacity: 0, y: 80 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { root: modalRef.current || undefined, once: true, amount: 0.5 },
+    transition: { duration: 1 },
+  };
+
   const modalContent = (
     <AnimatePresence>
       {open && (
         <motion.div
+          ref={modalRef}
           className="fixed inset-0 z-50 bg-white p-10 overflow-auto"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -47,15 +59,38 @@ export default function DuodincoPrPage() {
           </div>
           <div className="flex flex-col  items-center ">
             <div className="flex flex-col  text-lg text-gray-700 w-[800px]">
-              <section className="border px-4 py-4 font-bold">
+              <motion.section
+                {...scrollAnimationProps}
+                className="flex flex-col gap-2 border px-4 py-4 font-bold"
+              >
                 <p>
                   Frontend : React, Next.js, TypeScript, Tailwind CSS, Zustand
                 </p>
                 <p>Data Fetching : React Query Database : Supabase</p>
                 <p>패키지매니저 : npm</p>
-              </section>
-
-              <section>
+                <p>
+                  서비스 링크 :
+                  <Link
+                    href="https://duo-dingco-beta.vercel.app/"
+                    className="text-[#7571f4] ml-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    duo-dingco 바로가기
+                  </Link>
+                </p>
+                <p>
+                  <Link
+                    href="https://github.com/reizvoll/Duo_Dingco"
+                    className="text-[#7571f4]"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    gitHub 바로가기
+                  </Link>
+                </p>
+              </motion.section>
+              <motion.section {...scrollAnimationProps}>
                 <h1 className="my-24 font-bold text-3xl w-full flex justify-center">
                   주요 역할
                 </h1>
@@ -81,8 +116,7 @@ export default function DuodincoPrPage() {
                     사용자는 로그인 페이지로 리디렉션
                   </p>
                 </div>
-              </section>
-
+              </motion.section>
               <section className="py-24 ">
                 <h1 className="font-bold text-3xl w-full flex justify-center">
                   진행 과정 : 학습 리스트 페이지 (LearnListPage)

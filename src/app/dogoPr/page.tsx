@@ -1,19 +1,22 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import DogoCard from "../components/DogoCard";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function DogoPr() {
   const [open, setOpen] = useState(false);
-
   // 클라이언트 측에서만 Portal을 렌더링하기 위해 상태를 관리합니다.
   const [mounted, setMounted] = useState(false);
+  const modalRef = useRef(null);
+
   useEffect(() => {
     setMounted(true);
   }, []);
+
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -24,6 +27,14 @@ export default function DogoPr() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  const scrollAnimationProps = {
+    initial: { opacity: 0, y: 80 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { root: modalRef.current || undefined, once: true, amount: 0.5 },
+    transition: { duration: 1 },
+  };
+
   const modalContent = (
     <AnimatePresence>
       {open && (
@@ -35,7 +46,7 @@ export default function DogoPr() {
           transition={{ duration: 0.3 }}
         >
           <div className="relative flex items-center justify-center py-8">
-            <h2 className="text-3xl font-bold my-24">dogo project</h2>
+            <h2 className="text-3xl font-bold my-24">dogo-project</h2>
             <button
               onClick={() => setOpen(false)}
               className="absolute right-5 text-lg font-bold mr-24"
@@ -46,50 +57,74 @@ export default function DogoPr() {
 
           <div className="flex flex-col  items-center ">
             <div className="flex flex-col  text-lg text-gray-700 w-[800px]">
-              <section className="border px-4 py-4 font-bold">
+              <motion.section
+                {...scrollAnimationProps}
+                className="flex flex-col border px-4 py-4 font-bold gap-2"
+              >
                 <p>Frontend : React, Next.js, TypeScript, Tailwind CSS</p>
                 <p>Data Fetching : React Query</p>
                 <p>Database : Supabase</p>
                 <p>패키지매니저 : npm</p>
-              </section>
+                <p>
+                  서비스 링크 :
+                  <Link
+                    href="https://do-go-project.vercel.app/"
+                    className="font-bold text-[#7571f4] ml-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    do-go-project 바로가기
+                  </Link>
+                </p>
+                <p>
+                  <Link
+                    href="https://github.com/Noonsae/DoGo_project"
+                    className="text-[#7571f4] "
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    gitHub 바로가기
+                  </Link>
+                </p>
+              </motion.section>
 
-              <section className="border-b py-4">
+              <motion.section {...scrollAnimationProps}>
                 <h1 className="my-24 font-bold text-3xl w-full flex justify-center">
                   주요 역할
                 </h1>
-                <p className="font-bold text-xl">
-                  로그인 및 회원가입 기능 구현 - zustand 이용하여 유저정보 관리
-                </p>
-                <p className="text-base">
-                  Supabase를 활용하여 로그인, 회원가입 기능을 구현하고, 인증된
-                  사용자만 이용가능
-                </p>
-              </section>
-
-              <section className="border-b py-4">
-                <p className="font-bold text-xl">
-                  아이디 찾기 및 비밀번호 재설정 - otp 이용
-                </p>
-                <p className="text-base">
-                  사용자가 계정 복구 과정에서 불편함 개선
-                </p>
-              </section>
-
-              <section className=" border-b py-4">
-                <p className="font-bold text-xl"> 모달 기능 구현</p>
-                <p className="text-base">
-                  사용자가 예약을 진행하면서 필요한 정보를 즉시 확인할 수 있도록
-                  모달을 활용
-                </p>
-              </section>
-
-              <section className=" border-b py-4">
-                <p className="font-bold text-xl"> 문의하기 기능 구현</p>
-                <p className="text-base">
-                  사용자에게 편리한 피드백 채널을 제공하여 문제를 신속하게 해결
-                  가능
-                </p>
-              </section>
+                <div className="border-b py-4">
+                  <p className="font-bold text-xl">
+                    로그인 및 회원가입 기능 구현 - zustand 이용하여 유저정보
+                    관리
+                  </p>
+                  <p className="text-base">
+                    Supabase를 활용하여 로그인, 회원가입 기능을 구현하고, 인증된
+                    사용자만 이용가능
+                  </p>
+                </div>
+                <div className="border-b py-4">
+                  <p className="font-bold text-xl">
+                    아이디 찾기 및 비밀번호 재설정 - otp 이용
+                  </p>
+                  <p className="text-base">
+                    사용자가 계정 복구 과정에서 불편함 개선
+                  </p>
+                </div>
+                <div className="border-b py-4">
+                  <p className="font-bold text-xl"> 모달 기능 구현</p>
+                  <p className="text-base">
+                    사용자가 예약을 진행하면서 필요한 정보를 즉시 확인할 수
+                    있도록 모달을 활용
+                  </p>
+                </div>
+                <div className="py-4">
+                  <p className="font-bold text-xl"> 문의하기 기능 구현</p>
+                  <p className="text-base">
+                    사용자에게 편리한 피드백 채널을 제공하여 문제를 신속하게
+                    해결 가능
+                  </p>
+                </div>
+              </motion.section>
 
               <section className="py-24">
                 <h1 className="font-bold text-3xl w-full flex justify-center">
@@ -144,12 +179,13 @@ export default function DogoPr() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <p className=" font-bold text-xl ">- 아이디 찾기</p>
-                  <p className="text-base">
-                    사용자가 이름과 전화번호를 입력하면, Supabase의 사용자
-                    정보와 일치하는 경우 해당 이메일을 찾아 반환하도록 구현
-                  </p>
-
+                  <div>
+                    <p className=" font-bold text-xl ">- 아이디 찾기</p>
+                    <p className="text-base">
+                      사용자가 이름과 전화번호를 입력하면, Supabase의 사용자
+                      정보와 일치하는 경우 해당 이메일을 찾아 반환하도록 구현
+                    </p>
+                  </div>
                   <div className="flex flex-col items-center gap-2">
                     <Image
                       src="/images/dogo/dogoFindId.png"

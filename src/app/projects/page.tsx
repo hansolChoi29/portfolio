@@ -2,45 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { slides } from "../components/SlidesMockData";
+import DuodincoPrPage from "../duodingcoPr/page";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import DogoPr from "../dogoPr/page";
-import DuodincoPrPage from "../duodingcoPr/page";
-
-const slides = [
-  {
-    type: "phrase",
-    text: "안녕하세요! 반가워요.",
-  },
-  {
-    type: "phrase",
-    text: "강력한 추진력과 문제 해결",
-  },
-  {
-    type: "phrase",
-    text: "그리고 원활한 의사소통을 중요시합니다.",
-  },
-  {
-    type: "phrase",
-    text: "프로젝트를 소개하겠습니다.",
-  },
-  {
-    type: "project",
-    title: "Dogo-project",
-    description: "숙박기간을 지정하여 호텔을 검색할 수 있습니다.",
-    image: "/images/dogo/dogohome.png",
-  },
-  {
-    type: "project",
-    description: "필터를 이용하여 둘러볼 수 있습니다.",
-    image: "/images/dogo/dogoList.png",
-  },
-  {
-    type: "project",
-    description: "객실을 자세히 확인하고 예약할 수 있습니다.",
-    image: ["/images/dogo/dogoModal.png", "/images/dogo/dogoBoo.png"],
-  },
-];
+import Image from "next/image";
 
 export default function HomePage() {
   const [index, setIndex] = useState(0);
@@ -50,8 +17,8 @@ export default function HomePage() {
   const handleScroll = () => {
     const scrollTop = window.scrollY;
     const vh = window.innerHeight;
-    // 한 화면(100vh)마다 한 슬라이드로 계산 (최대 totalSlides-1),
-    // 1vh: 현재 브라우저 뷰포트(화면 창)의 높이의 1%
+    // 한 화면(100vh)마다 한 슬라이드로 계산 (최대 totalSlides - 1)
+    // 1vh는 현재 브라우저 창 높이의 1%
     const newIndex = Math.min(Math.floor(scrollTop / vh), totalSlides - 1);
     if (newIndex !== index) {
       console.log("슬라이드 전환: ", newIndex);
@@ -78,53 +45,60 @@ export default function HomePage() {
         className="relative"
         style={{ height: `${(totalSlides + 1) * 100}vh` }}
       >
-        {/* sticky 영역: 스크롤시에도 화면에 고정되며, 배경색을 애니메이션으로 조절 */}
         <motion.div
           className="sticky top-0 h-screen flex items-center justify-center"
-          animate={{ backgroundColor: headerVisible ? "#282828" : "#000000" }}
+          animate={{ backgroundColor: headerVisible ? "#f6f6f6" : "#000000" }}
           transition={{ duration: 0.4 }}
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.2 }}
-              className="text-center px-6"
-            >
-              {slides[index].type === "phrase" ? (
-                <h1 className="text-white text-2xl md:text-5xl font-bold">
-                  {slides[index].text}
-                </h1>
-              ) : (
-                <div className="text-white">
-                  <h1 className="text-3xl md:text-5xl font-bold">
-                    {slides[index].title}
+          {!headerVisible && (
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.2 }}
+                className="text-center px-6"
+              >
+                {slides[index].type === "phrase" ? (
+                  <h1 className="text-white text-2xl md:text-5xl font-bold">
+                    {slides[index].text}
                   </h1>
-                  <p className="mt-4 text-lg">{slides[index].description}</p>
-                  {/* 이미지 렌더링 부분: image 필드가 배열이면 모두 map으로 표시 */}
-                  {Array.isArray(slides[index].image) ? (
-                    slides[index].image.map((img, i) => (
-                      <img
-                        key={i}
-                        src={img}
-                        alt={`${slides[index].title} ${i + 1}`}
-                        className="mx-auto mt-4 w-[700px] rounded-lg shadow-lg"
+                ) : (
+                  <div className="text-white">
+                    {slides[index].title && (
+                      <h1 className="text-3xl md:text-5xl font-bold">
+                        {slides[index].title}
+                      </h1>
+                    )}
+                    <p className="mt-4 text-lg">{slides[index].description}</p>
+
+                    {Array.isArray(slides[index].image) ? (
+                      slides[index].image.map((img, i) => (
+                        <Image
+                          key={i}
+                          src={img}
+                          alt={`${slides[index].title || "Project"} ${i + 1}`}
+                          width={700}
+                          height={500}
+                          className="mx-auto mt-4 rounded-lg shadow-lg"
+                        />
+                      ))
+                    ) : (
+                      <Image
+                        src={slides[index].image!}
+                        alt={slides[index].title || "Project"}
+                        width={1000}
+                        height={500}
+                        className="mx-auto mt-4 rounded-lg shadow-lg"
                       />
-                    ))
-                  ) : (
-                    <img
-                      src={slides[index].image}
-                      alt={slides[index].title}
-                      className="mx-auto mt-4 w-[1000px] h-[500px] rounded-lg shadow-lg"
-                    />
-                  )}
-                </div>
-              )}
-            </motion.div>
-          </AnimatePresence>
-          {index === 0 && (
+                    )}
+                  </div>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          )}
+          {index === 0 && !headerVisible && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -132,14 +106,13 @@ export default function HomePage() {
               transition={{ delay: 2, duration: 0.5 }}
               className="absolute bottom-10 left-0 right-0 text-center text-white text-lg animate-bounce"
             >
-              {/* animate-bounce: 위아래 바운스 바운스 */}
               스크롤을 내려주세요
             </motion.div>
           )}
         </motion.div>
       </section>
       <>
-        {/* 헤더: 스크롤 영역을 넘으면 애니메이션으로 나타남 */}
+        {/* 헤더: 스크롤 영역 전체를 넘으면 애니메이션으로 나타남 */}
         <AnimatePresence>
           {headerVisible && (
             <motion.div
@@ -153,13 +126,13 @@ export default function HomePage() {
             </motion.div>
           )}
         </AnimatePresence>
-        {/* 프로젝트 섹션: 섹션의 약 50%가 뷰포트에 들어오면 나타남 */}
+        {/* 프로젝트 섹션: 뷰포트의 약 50%가 보이면 나타남 */}
         <motion.section
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0.1 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 1 }}
-          className="flex gap-8 min-h-screen bg-[#202020] p-10 justify-center items-center"
+          className="flex flex-col  md:flex-row gap-8 min-h-screen bg-[#202020] p-10 justify-center items-center"
         >
           <div>
             <DogoPr />
