@@ -20,7 +20,6 @@ const slides = [
     type: "phrase",
     text: "그리고 원활한 의사소통을 중요시합니다.",
   },
-
   {
     type: "phrase",
     text: "프로젝트를 소개하겠습니다.",
@@ -41,13 +40,6 @@ const slides = [
     description: "객실을 자세히 확인하고 예약할 수 있습니다.",
     image: ["/images/dogoModal.png", "/images/dogoBoo.png"],
   },
-
-  // {
-  //   type: "project",
-  //   title: "듀오딩코는 개발자의 학습을 도와줍니다.",
-  //   description: "듀오딩코 프로젝트를 통해 협업과 혁신을 경험했습니다.",
-  //   image: "/images/project2.png",
-  // },
 ];
 
 export default function HomePage() {
@@ -58,7 +50,8 @@ export default function HomePage() {
   const handleScroll = () => {
     const scrollTop = window.scrollY;
     const vh = window.innerHeight;
-    // 한 화면(100vh)마다 한 슬라이드로 계산 (최대 totalSlides-1)
+    // 한 화면(100vh)마다 한 슬라이드로 계산 (최대 totalSlides-1),
+    // 1vh: 현재 브라우저 뷰포트(화면 창)의 높이의 1%
     const newIndex = Math.min(Math.floor(scrollTop / vh), totalSlides - 1);
     if (newIndex !== index) {
       console.log("슬라이드 전환: ", newIndex);
@@ -85,7 +78,7 @@ export default function HomePage() {
         className="relative"
         style={{ height: `${(totalSlides + 1) * 100}vh` }}
       >
-        {/* sticky 설정: 스크롤시에도 화면에 고정되며, 배경색을 애니메이션으로 조절 */}
+        {/* sticky 영역: 스크롤시에도 화면에 고정되며, 배경색을 애니메이션으로 조절 */}
         <motion.div
           className="sticky top-0 h-screen flex items-center justify-center"
           animate={{ backgroundColor: headerVisible ? "#282828" : "#000000" }}
@@ -117,7 +110,7 @@ export default function HomePage() {
                         key={i}
                         src={img}
                         alt={`${slides[index].title} ${i + 1}`}
-                        className="mx-auto mt-4 w-[700px]  rounded-lg shadow-lg"
+                        className="mx-auto mt-4 w-[700px] rounded-lg shadow-lg"
                       />
                     ))
                   ) : (
@@ -131,6 +124,17 @@ export default function HomePage() {
               )}
             </motion.div>
           </AnimatePresence>
+          {index === 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 2, duration: 0.5 }}
+              className="absolute bottom-10 left-0 right-0 text-center text-white text-lg animate-bounce"
+            >
+              스크롤을 내려주세요
+            </motion.div>
+          )}
         </motion.div>
       </section>
       <>
