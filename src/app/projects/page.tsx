@@ -72,7 +72,7 @@ export default function HomePage() {
                       </h1>
                     )}
                     <p className="mt-4 text-lg">{slides[index].description}</p>
-
+                    {/* 이미지 렌더링: image가 배열이면 모두 map, 단일 문자열이면 그대로 렌더링 */}
                     {Array.isArray(slides[index].image) ? (
                       slides[index].image.map((img, i) => (
                         <Image
@@ -81,7 +81,8 @@ export default function HomePage() {
                           alt={`${slides[index].title || "Project"} ${i + 1}`}
                           width={700}
                           height={500}
-                          className="mx-auto mt-4 rounded-lg shadow-lg"
+                          style={{ height: "auto" }}
+                          className="mx-auto mt-4 rounded-lg shadow-lg w-full max-w-[700px]"
                         />
                       ))
                     ) : (
@@ -90,7 +91,8 @@ export default function HomePage() {
                         alt={slides[index].title || "Project"}
                         width={1000}
                         height={500}
-                        className="mx-auto mt-4 rounded-lg shadow-lg"
+                        style={{ height: "auto" }}
+                        className="mx-auto mt-4 rounded-lg shadow-lg w-full max-w-[1000px]"
                       />
                     )}
                   </div>
@@ -112,7 +114,7 @@ export default function HomePage() {
         </motion.div>
       </section>
       <>
-        {/* 헤더: 스크롤 영역 전체를 넘으면 애니메이션으로 나타남 */}
+        {/* 헤더: 스크롤 영역을 넘으면 애니메이션으로 나타남 */}
         <AnimatePresence>
           {headerVisible && (
             <motion.div
@@ -126,13 +128,13 @@ export default function HomePage() {
             </motion.div>
           )}
         </AnimatePresence>
-        {/* 프로젝트 섹션: 뷰포트의 약 50%가 보이면 나타남 */}
+        {/* 프로젝트 섹션: 모바일은 세로 쌓기, 데스크탑은 가로 배열 */}
         <motion.section
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0.1 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 1 }}
-          className="flex flex-col  md:flex-row gap-8 min-h-screen bg-[#202020] p-10 justify-center items-center"
+          className="flex flex-col md:flex-row gap-8 min-h-screen bg-[#202020] p-10 justify-center items-center"
         >
           <div>
             <DogoPr />

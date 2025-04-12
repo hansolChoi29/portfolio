@@ -136,6 +136,7 @@ export default function DuodincoPrPage() {
                   height={500}
                   layout="responsive"
                   className="rounded-2xl"
+                  style={{ height: "auto" }}
                 />
               </section>
 
@@ -158,6 +159,7 @@ export default function DuodincoPrPage() {
                     alt="duodingcoLearningDetail"
                     width={800}
                     height={500}
+                    style={{ height: "auto" }}
                     layout="responsive"
                     className="rounded-2xl"
                   />
@@ -167,6 +169,7 @@ export default function DuodincoPrPage() {
                     width={800}
                     height={500}
                     layout="responsive"
+                    style={{ height: "auto" }}
                     className="rounded-2xl"
                   />
                   <Image
@@ -175,6 +178,7 @@ export default function DuodincoPrPage() {
                     width={800}
                     height={500}
                     layout="responsive"
+                    style={{ height: "auto" }}
                     className="rounded-2xl"
                   />
                   <Image
@@ -182,6 +186,7 @@ export default function DuodincoPrPage() {
                     alt="duodingcoLearningEnd"
                     width={800}
                     height={500}
+                    style={{ height: "auto" }}
                     layout="responsive"
                     className="rounded-2xl"
                   />
@@ -206,6 +211,7 @@ export default function DuodincoPrPage() {
                   alt="duodingcoHot"
                   width={800}
                   height={500}
+                  style={{ height: "auto" }}
                   layout="responsive"
                   className="rounded-2xl"
                 />
