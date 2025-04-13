@@ -134,7 +134,7 @@ export default function ModalContent({
               </p>
             </section>
             {/*    상세 페이지(LearnDetailPage) 소개 */}
-            <section className="py-24 ">
+            <section>
               <h1 className="font-bold py-24 sm:text-3xl text-xl w-full flex justify-center">
                 상세 페이지(LearnDetailPage)
               </h1>
@@ -226,7 +226,7 @@ export default function ModalContent({
             </section>
           </div>
         </div>
-        <ButtonUp modalRef={ modalRef} />
+        <ButtonUp modalRef={modalRef} />
       </motion.div>
     </AnimatePresence>
   );

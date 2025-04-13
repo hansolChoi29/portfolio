@@ -54,7 +54,7 @@ export default function ModalContent({
               <div className="flex flex-col border-b border-black pb-2">
                 <Link
                   href="https://do-go-project.vercel.app/"
-                  className="font-bold text-[#757575] ml-1 hover:text-[#ff5d5d]"
+                  className="font-bold text-[#757575] hover:text-[#ff5d5d]"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
