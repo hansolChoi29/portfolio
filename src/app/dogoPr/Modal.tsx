@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import DogoCard from "../components/DogoCard";
-import { motion } from "framer-motion";
 import ModalContent from "./components/ModalContent";
 
 export default function DogoPr() {
