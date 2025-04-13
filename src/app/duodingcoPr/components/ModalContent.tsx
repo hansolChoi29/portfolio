@@ -26,7 +26,7 @@ export default function ModalContent({
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="relative flex items-center justify-center py-8">
+        <div className="text-black relative flex items-center justify-center py-8">
           <h2 className="sm:text-3xl font-bold my-24">duodingco</h2>
           <button
             onClick={() => onClose()}
