@@ -128,11 +128,10 @@ export default function ProjectsPage() {
               transition={{ duration: 0.6 }}
             >
               <Header onToolsClick={openToolsModal} />
-              <ToolsModal isOpen={isToolsModalOpen} onClose={closeToolsModal} />
             </motion.div>
           )}
         </AnimatePresence>
-        {/* 프로젝트 섹션: 모바일은 세로 쌓기, 데스크탑은 가로 배열 */}
+        <ToolsModal isOpen={isToolsModalOpen} onClose={closeToolsModal} />
         <motion.section
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0.1 }}
@@ -140,12 +139,9 @@ export default function ProjectsPage() {
           transition={{ duration: 1 }}
           className="flex flex-col md:flex-row gap-8 min-h-screen bg-[#202020] p-10 justify-center items-center"
         >
-          <div>
-            <DogoPr />
-          </div>
-          <div>
-            <DuodincoPrPage />
-          </div>
+          <DogoPr />
+
+          <DuodincoPrPage />
         </motion.section>
       </>
       <Footer />
