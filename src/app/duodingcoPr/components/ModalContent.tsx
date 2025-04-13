@@ -179,6 +179,12 @@ export default function ModalContent({
                   style={{ height: "auto" }}
                   className="rounded-2xl"
                 />
+                <p className=" py-4 sm:text-base text-sm ">
+                  학습이 완료되면 <strong>뒤로가기</strong> 버튼이{" "}
+                  <strong>완료하기</strong> 버튼으로 변경되어, 사용자가 더
+                  직관적으로 흐름을 이해할 수 있도록 UX에 신경썼습니다.
+                </p>
+
                 <Image
                   src="/images/duodingco/duodingcoLearningAlert.png"
                   alt="duodingcoLearningEnd"
