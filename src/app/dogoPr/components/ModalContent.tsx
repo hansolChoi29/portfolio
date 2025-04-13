@@ -11,6 +11,7 @@ export interface ModalContentProps {
   scrollAnimationProps: MotionProps;
 }
 
+//dogo-project
 export default function ModalContent({
   onClose,
   modalRef,
@@ -38,6 +39,7 @@ export default function ModalContent({
 
         <div className="flex flex-col items-center">
           <div className="flex flex-col text-sm sm:text-base  text-gray-700 w-full max-w-[800px]">
+            {/* 간단 소개박스 */}
             <motion.section
               {...scrollAnimationProps}
               className="flex flex-col border rounded-xl border-black px-4 py-4 font-bold gap-2"
@@ -49,27 +51,22 @@ export default function ModalContent({
               </div>
 
               <div className="flex flex-col border-b border-black pb-2">
-                <p>
-                  서비스 링크 :
-                  <Link
-                    href="https://do-go-project.vercel.app/"
-                    className="font-bold text-[#757575] ml-1 hover:text-[#ff5d5d]"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    do-go-project 바로가기
-                  </Link>
-                </p>
-                <p>
-                  <Link
-                    href="https://github.com/Noonsae/DoGo_project"
-                    className="text-[#757575] hover:text-[#ff5d5d]"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    do-go-project gitHub 바로가기
-                  </Link>
-                </p>
+                <Link
+                  href="https://do-go-project.vercel.app/"
+                  className="font-bold text-[#757575] ml-1 hover:text-[#ff5d5d]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p>do-go-project 사이트 바로가기</p>
+                </Link>
+                <Link
+                  href="https://github.com/Noonsae/DoGo_project"
+                  className="text-[#757575] hover:text-[#ff5d5d]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p>do-go-project gitHub 바로가기</p>
+                </Link>
                 <Link
                   href="https://www.notion.so/5-19161b5e89bb80a8b3d4debfff2f783f"
                   className="text-[#757575] hover:text-[#ff5d5d]"
@@ -105,7 +102,7 @@ export default function ModalContent({
                 <p>트러블 슈팅 - 로그인 및 상태 관리 문제 해결</p>
               </Link>
             </motion.section>
-
+            {/* 주요역할 */}
             <motion.section {...scrollAnimationProps}>
               <h1 className="my-24 font-bold sm:text-3xl text-xl  w-full flex justify-center">
                 주요 역할
@@ -146,7 +143,7 @@ export default function ModalContent({
                 </p>
               </div>
             </motion.section>
-
+            {/*     개발 과정 상세 (Auth) 소개 */}
             <section className="flex flex-col gap-24 py-24">
               <h1 className="font-bold sm:text-3xl text-xl w-full flex justify-center">
                 개발 과정 상세 (Auth)
@@ -163,16 +160,15 @@ export default function ModalContent({
                   className="rounded-2xl w-full max-w-[800px]"
                 />
                 <p className="sm:text-base text-sm ">
-                  {" "}
-                  사용자 편의성을 높이기 위해{" "}
+                  사용자 편의성을 높이기 위해
                   <strong>user 테이블의 role 컬럼</strong>을 기준으로 일반
                   사용자와 비즈니스 사용자를 구분하였습니다. 일반 사용자의 경우
-                  소셜 로그인 기능을 제공하여 로그인 절차를 간소화했습니다.{" "}
+                  소셜 로그인 기능을 제공하여 로그인 절차를 간소화했습니다.
                   <br /> 로그인 후, 헤더가 로그인 상태에 따라 동적으로
                   렌더링되어야 했으나 SSR 방식으로는 즉각적인 상태 반영이
-                  어려웠습니다. 이를 해결하기 위해 CSR 방식으로 전환하고,{" "}
+                  어려웠습니다. 이를 해결하기 위해 CSR 방식으로 전환하고,
                   <strong>Server Action</strong>을 활용하여 클라이언트와 서버
-                  간의 원활한 통신을 구현하였습니다.{" "}
+                  간의 원활한 통신을 구현하였습니다.
                 </p>
               </div>
               <div className="flex flex-col gap-2 ">
@@ -364,10 +360,10 @@ export default function ModalContent({
                 </div>
               </div>
             </section>
-
+            {/* Modal 소개 */}
             <section className="py-24">
               <h1 className="font-bold mb-4 sm:text-3xl text-xl w-full flex justify-center">
-                진행 과정 : Modal
+                Modal
               </h1>
               <div className="flex flex-col items-center gap-2">
                 <Image
@@ -419,10 +415,10 @@ export default function ModalContent({
                 </p>
               </div>
             </section>
-
+            {/*  문의하기(Inquiry) 소개 */}
             <section className="py-24">
               <h1 className="font-bold mb-4 sm:text-3xl text-xl w-full flex justify-center">
-                진행 과정 : 문의하기(Inquiry)
+                문의하기(Inquiry)
               </h1>
               <div className="sm:text-base text-sm mb-4">
                 사용자들이 호텔 시설, 예약, 결제 등 특정 카테고리의 문의사항을
