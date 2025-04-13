@@ -31,7 +31,7 @@ export default function ModalContent({
           <h2 className="sm:text-3xl font-bold my-24">dogo-project</h2>
           <button
             onClick={() => onClose()}
-            className="absolute  text-lg font-bold mr-24 sm:absolute right-5 sm:right-[10px] sm:text-lx"
+            className="absolute  text-lg font-bold mr-24 sm:absolute right-5 sm:right-[10px] sm:text-xl"
           >
             ✕
           </button>
