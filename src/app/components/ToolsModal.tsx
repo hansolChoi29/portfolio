@@ -40,7 +40,9 @@ export default function ToolsModal({ isOpen, onClose }: ToolsModalProps) {
             transition={{ duration: 0.3 }}
           >
             <div className="flex justify-between items-center pb-2 mb-4">
-              <h1 className="text-xl font-bold">Languages and Tools</h1>
+              <h1 className="text-xl text-black font-bold">
+                Languages and Tools
+              </h1>
               <button
                 onClick={onClose}
                 className="text-gray-500 hover:text-gray-700 text-2xl"
