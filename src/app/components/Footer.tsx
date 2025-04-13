@@ -5,16 +5,16 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 w-full py-10 px-6 text-left border-t">
-      <div className="flex flex-col space-y-3 text-lg text-gray-800">
+    <footer className=" w-full bg-[#202020] py-10 px-6 text-left ">
+      <div className="flex items-end  border-t p-4 flex-col space-y-3 text-lg text-gray-800">
         <div className="flex gap-2">
-          <p className="text-gray-600">전화번호 </p>
-          <p>010-2915-2931</p>
+          <p className="text-white">전화번호 </p>
+          <p className="text-white">010-2915-2931</p>
         </div>
 
         <div className="flex gap-2">
-          <p className="text-gray-600">E-mail </p>
-          <p>ggksthf29@gmail.com</p>
+          <p className="text-white">E-mail </p>
+          <p className="text-white">ggksthf29@gmail.com</p>
         </div>
 
         <div className="flex ">
@@ -26,25 +26,35 @@ export default function Footer() {
             <img
               className="w-10"
               src="   https://cdn-icons-png.flaticon.com/512/11376/11376339.png  "
+              width={30}
+              height={30}
             />
           </Link>
           <Link
             href="https://instagram.com/_hxnxol_"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-red-500 mr-3"
+            className="text-white mr-3"
           >
             <img
               className="w-10"
               src="https://cdn-icons-png.flaticon.com/128/733/733558.png"
+              width={30}
+              height={30}
             />
             {/* underline */}
           </Link>
 
-          <Link href="https://winwin0219.tistory.com/">
+          <Link
+            href="https://winwin0219.tistory.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               className="w-10"
               src="   https://cdn-icons-png.flaticon.com/512/16524/16524532.png "
+              width={30}
+              height={30}
             />
           </Link>
         </div>
