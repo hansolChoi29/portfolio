@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { slides } from "../slidesMockData";
 import DuodincoPrPage from "../duodingcoPr/Modal";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import DogoPr from "../dogoPr/Modal";
 import Image from "next/image";
+import { slides } from "../SlidesMockData";
 
 export default function ProjectsPage() {
   const [index, setIndex] = useState(0);
