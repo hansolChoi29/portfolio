@@ -2,7 +2,7 @@
 
 ---
 
-### 이 레포지토리는 개인 포트폴리오 웹사이트로, 대표 프로젝트 2개를 소개하고 있습니다. Next.js와 Tailwind CSS를 활용하여 반응형 디자인과 사용자 친화적인 UI를 구현하였습니다.
+##### 이 레포지토리는 개인 포트폴리오 웹사이트로, 대표 프로젝트 2개를 소개하고 있습니다. Next.js와 Tailwind CSS를 활용하여 반응형 디자인과 사용자 친화적인 UI를 구현하였습니다.
 
 ![readme](https://github.com/user-attachments/assets/e18838f7-d400-4d06-8e4e-b721a968fa78)
 
