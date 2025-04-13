@@ -11,7 +11,8 @@ export default function DogoPr() {
   const [open, setOpen] = useState(false);
   // 클라이언트 측에서만 Portal을 렌더링하기 위해 상태를 관리합니다.
   const [mounted, setMounted] = useState(false);
-  const modalRef = useRef(null);
+  // const modalRef = useRef(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -31,7 +32,7 @@ export default function DogoPr() {
   const scrollAnimationProps = {
     initial: { opacity: 0, y: 80 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { root: modalRef.current || undefined, once: true, amount: 0.5 },
+    viewport: { root: modalRef, once: true, amount: 0.5 },
     transition: { duration: 1 },
   };
 
@@ -428,7 +429,7 @@ export default function DogoPr() {
           <button
             onClick={() => {
               if (modalRef.current) {
-                modalRef.current.scrollTo({ top: 0, behavior: "smooth" });
+                modalRef.current?.scrollTo({ top: 0, behavior: "smooth" });
               }
             }}
             className="fixed sm:bottom-[50px] bottom-[50px] sm:right-[130px] right-[30px] z-[10000]  text-white sm:text-sm text-sm px-4 py-2  hover:animate-bounce transition "
