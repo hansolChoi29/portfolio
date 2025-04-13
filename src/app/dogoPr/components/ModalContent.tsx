@@ -146,11 +146,10 @@ export default function ModalContent({
             </motion.section>
             {/*     개발 과정 상세 (Auth) 소개 */}
             <section className="flex flex-col gap-24 py-24">
-              <h1 className="font-bold sm:text-3xl text-xl w-full flex justify-center">
-                개발 과정 상세 (Auth)
-              </h1>
               <div className="flex flex-col gap-2 ">
-                <p className="font-bold sm:text-xl text-base ">로그인 페이지</p>
+                <h1 className="font-bold sm:text-3xl py-24  text-xl w-full flex justify-center">
+                  로그인 페이지 (SignInPage)
+                </h1>
                 <Image
                   src="/images/dogo/dogoSignin.png"
                   alt="dogoSignin"
@@ -173,9 +172,9 @@ export default function ModalContent({
                 </p>
               </div>
               <div className="flex flex-col gap-2 ">
-                <p className="font-bold sm:text-xl text-base">
-                  회원가입 페이지
-                </p>
+                <h1 className="font-bold sm:text-3xl py-24  text-xl w-full flex justify-center">
+                  회원가입 페이지 (SignUpPage)
+                </h1>
                 <Image
                   src="/images/dogo/dogoSignup.png"
                   alt="dogoSignup"
@@ -209,7 +208,9 @@ export default function ModalContent({
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <p className="font-bold sm:text-xl text-base">소셜 로그인</p>
+                <h1 className="font-bold sm:text-3xl py-24  text-xl w-full flex justify-center">
+                  소셜 로그인 (KakaoSignInPage)
+                </h1>
                 <Image
                   src="/images/dogo/dogoKakaoSignin.png"
                   alt="dogoKakaoSignin"
@@ -235,7 +236,9 @@ export default function ModalContent({
               </div>
               <div className="flex flex-col gap-2">
                 <div>
-                  <p className="font-bold sm:text-xl text-base">아이디 찾기</p>
+                  <h1 className="font-bold sm:text-3xl py-24  text-xl w-full flex justify-center">
+                    아이디 찾기 (FindIdModal)
+                  </h1>
                   <p className="sm:text-base text-sm">
                     사용자가 이름과 전화번호를 입력하면 Supabase의 유저 정보와
                     대조하여 일치하는 이메일을 반환하도록 해주었습니다.
@@ -295,9 +298,9 @@ export default function ModalContent({
                 </div>
               </div>
               <div className="flex flex-col gap-2">
-                <p className="font-bold sm:text-xl text-base">
-                  비밀번호 재설정
-                </p>
+                <h1 className="font-bold sm:text-3xl py-24  text-xl w-full flex justify-center">
+                  비밀번호 재설정 (NewPasswordModal)
+                </h1>
                 <p className="sm:text-base text-sm mb-4">
                   처음 기획에서는 단순히 비밀번호 찾기 기능을 고려하였습니다.
                   그러나 인증(Auth) 시스템 특성상 비밀번호는 데이터베이스
@@ -363,8 +366,8 @@ export default function ModalContent({
             </section>
             {/* Modal 소개 */}
             <section className="py-24">
-              <h1 className="font-bold mb-4 sm:text-3xl text-xl w-full flex justify-center">
-                Modal
+              <h1 className="font-bold sm:text-3xl py-24  text-xl w-full flex justify-center">
+                RoomDetailModal
               </h1>
               <div className="flex flex-col items-center gap-2">
                 <Image
@@ -418,8 +421,8 @@ export default function ModalContent({
             </section>
             {/*  문의하기(Inquiry) 소개 */}
             <section className="py-24">
-              <h1 className="font-bold mb-4 sm:text-3xl text-xl w-full flex justify-center">
-                문의하기(Inquiry)
+              <h1 className="font-bold sm:text-3xl py-24  text-xl w-full flex justify-center">
+                문의하기(InquiryModal)
               </h1>
               <div className="sm:text-base text-sm mb-4">
                 사용자들이 호텔 시설, 예약, 결제 등 특정 카테고리의 문의사항을
