@@ -21,7 +21,6 @@ export default function HomePage() {
     // 1vh는 현재 브라우저 창 높이의 1%
     const newIndex = Math.min(Math.floor(scrollTop / vh), totalSlides - 1);
     if (newIndex !== index) {
-      console.log("슬라이드 전환: ", newIndex);
       setIndex(newIndex);
     }
     // 스크롤 영역 전체(예: totalSlides * vh)를 넘으면 헤더가 나타나도록 설정

@@ -3,13 +3,12 @@
 import { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import DogoCard from "../components/DogoCard";
+import { motion } from "framer-motion";
 import ModalContent from "./components/ModalContent";
 
 export default function DogoPr() {
   const [open, setOpen] = useState(false);
-  // 클라이언트 측에서만 Portal을 렌더링하기 위해 상태를 관리합니다.
   const [mounted, setMounted] = useState(false);
-  // const modalRef = useRef(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -34,8 +33,7 @@ export default function DogoPr() {
     transition: { duration: 1 },
   };
 
-  const modalContent = (
-    // 컴포넌트로 분리하여 ui 만들어줌
+  const modalContentJSX = (
     <ModalContent
       onClose={() => setOpen(false)}
       modalRef={modalRef}
@@ -48,7 +46,7 @@ export default function DogoPr() {
       <div className="gap-6">
         <DogoCard onClick={() => setOpen(true)} />
       </div>
-      {mounted && ReactDOM.createPortal(modalContent, document.body)}
+      {mounted && open && ReactDOM.createPortal(modalContentJSX, document.body)}
     </>
   );
 }
