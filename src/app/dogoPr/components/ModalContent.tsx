@@ -1,5 +1,6 @@
 "use client";
 
+import ButtonUp from "@/app/components/ButtonUp";
 import { motion, AnimatePresence, MotionProps } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,7 +22,7 @@ export default function ModalContent({
     <AnimatePresence>
       <motion.div
         ref={modalRef}
-        className="fixed inset-0 z-[9999] bg-[#efefef] sm:p-12 p-16 overflow-auto"
+        className="fixed inset-0 z-[9999] bg-[#efefef] sm:p-12 p-3 overflow-auto"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0 }}
@@ -484,16 +485,7 @@ export default function ModalContent({
             </section>
           </div>
         </div>
-        <button
-          onClick={() => {
-            if (modalRef.current) {
-              modalRef.current.scrollTo({ top: 0, behavior: "smooth" });
-            }
-          }}
-          className="fixed sm:bottom-[50px] bottom-[50px] sm:right-[130px] right-[30px] z-[10000]  text-white sm:text-sm text-sm px-4 py-2  hover:animate-bounce transition"
-        >
-          <img src="/icons/arrow.svg" width={48} height={48} />
-        </button>
+        <ButtonUp modalRef={modalRef} />
       </motion.div>
     </AnimatePresence>
   );
