@@ -50,7 +50,7 @@
 │     ├─ 🏠 page.tsx
 │     ├─ 📁 projects
 │     │  └─ 📄 page.tsx
-│     └─ 🗃️ SlidesMockData.ts
+│     └─ 🗃️ slidesMockData.ts
 ├─ 🎨 tailwind.config.ts
 └─ 📐 tsconfig.json
 
