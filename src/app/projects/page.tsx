@@ -8,10 +8,14 @@ import Footer from "../components/Footer";
 import DogoPr from "../dogoPr/Modal";
 import Image from "next/image";
 import { slides } from "../SlidesMockData";
+import ToolsModal from "../components/ToolsModal";
 
 export default function ProjectsPage() {
-  const [index, setIndex] = useState(0);
+  const [isToolsModalOpen, setIsToolsModalOpen] = useState(false);
   const [headerVisible, setHeaderVisible] = useState(false);
+  const closeToolsModal = () => setIsToolsModalOpen(false);
+  const openToolsModal = () => setIsToolsModalOpen(true);
+  const [index, setIndex] = useState(0);
   const totalSlides = slides.length;
 
   const handleScroll = () => {
@@ -123,7 +127,8 @@ export default function ProjectsPage() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Header />
+              <Header onToolsClick={openToolsModal} />
+              <ToolsModal isOpen={isToolsModalOpen} onClose={closeToolsModal} />
             </motion.div>
           )}
         </AnimatePresence>
