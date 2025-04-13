@@ -86,7 +86,7 @@ export default function ModalContent({
                 <p>트러블 슈팅 - Redirect URL와 OAuth 토큰 유출</p>
               </Link>
               <Link
-                href="https://winwin0219.tistory.com/171"
+                href="https://winwin0219.tistory.com/182"
                 className="text-[#757575] hover:text-[#ff5d5d]"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -94,7 +94,7 @@ export default function ModalContent({
                 <p>트러블 슈팅 - 미디어 쿼리</p>
               </Link>
               <Link
-                href="https://winwin0219.tistory.com/171"
+                href="https://winwin0219.tistory.com/183"
                 className="text-[#757575] hover:text-[#ff5d5d]"
                 target="_blank"
                 rel="noopener noreferrer"
