@@ -68,7 +68,7 @@ export default function ModalContent({
                 </Link>
               </div>
               <Link
-                href="https://github.com/reizvoll/Duo_Dingco"
+                href="https://winwin0219.tistory.com/entry/React-%EC%8B%AC%ED%99%94-Intro-%EC%8B%A4%EB%AC%B4%EC%99%80-%EA%B0%80%EA%B9%8C%EC%9A%B4-%EC%88%98%EC%A4%80%EC%9D%98-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-Trouble-Shooting"
                 className="font-bold text-[#757575] ml-1 hover:text-[#ff5d5d]"
                 target="_blank"
                 rel="noopener noreferrer"
