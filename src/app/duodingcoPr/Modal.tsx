@@ -1,20 +1,13 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import DuodincoCard from "../components/DudincoCard";
 import ReactDOM from "react-dom";
-import Image from "next/image";
-import Link from "next/link";
 import ModalContent from "./components/ModalContent";
 
 export default function DuodincoPrPage() {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const modalRef = useRef(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     setMounted(true);
