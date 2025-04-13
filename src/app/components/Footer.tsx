@@ -16,7 +16,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="underline"
           >
-            🔗 Flaticon
+            © Flaticon
           </Link>
         </p>
         {/* 전화번호, 이메일, 소셜 아이콘 */}
