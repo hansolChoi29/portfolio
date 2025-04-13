@@ -138,13 +138,13 @@ export default function ModalContent({
                 상세 페이지(LearnDetailPage)
               </h1>
               <div className=" py-4 sm:text-base text-sm ">
-                북마크 기능과 작성자 정보를 통해 상세 정보와 사용자 프로필을
-                연동 동적 세그먼트를 사용하여 URL 기반의 상세 정보를 제공하고,
-                비동기 데이터 패칭 및 에러 핸들링을 통해 안정성을 확보하며,
-                리액트 훅과 상태 업데이트를 통해 UI 반응성을 강화 단어와 뜻을 3D
-                효과로 전환하여 학습 카드에 플립 카드 애니메이션을 적용해
-                집중도를 향상시키고, 키보드 이벤트를 활용하여 좌우 화살표와
-                스페이스바로 카드 탐색 및 뒤집기를 지원
+                북마크 기능과 작성자 정보를 활용하여 상세 정보 및 사용자
+                프로필을 연동했습니다. <br />
+                리액트 훅을 활용하여 효율적으로 상태를 관리해 UI의 반응성을
+                강화했습니다. 학습 카드는 단어와 뜻이 3D 플립 카드
+                애니메이션으로 전환되도록 설계하여 학습자의 집중력과 흥미를
+                높였습니다. 추가적으로 키보드 이벤트를 통한 카드 탐색 및 뒤집기
+                기능도 개발하였으며, 이 기능은 곧 적용될 예정입니다.
               </div>
               <div className="flex flex-col gap-2 ">
                 <Image
@@ -165,6 +165,11 @@ export default function ModalContent({
                   style={{ height: "auto" }}
                   className="rounded-2xl"
                 />
+                <p className=" py-4 sm:text-base text-sm ">
+                  동적 세그먼트를 적용해 URL을 기반으로 상세 페이지로 이동할 수
+                  있도록 구현하고, 비동기 데이터 패칭 및 에러 핸들링을 통해
+                  애플리케이션의 안정성을 높였습니다.{" "}
+                </p>
                 <Image
                   src="/images/duodingco/duodingcoLearningEnd.png"
                   alt="duodingcoLearningEnd"
