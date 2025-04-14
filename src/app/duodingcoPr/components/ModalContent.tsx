@@ -99,11 +99,11 @@ export default function ModalContent({
               </div>
               <div className="border-b border-black py-4">
                 <p className="font-bold sm:text-xl text-base">
-                  세션 관리 및 인증 시스템 구현
+                  뜨끈하게 올라온 학습리스트
                 </p>
                 <p className="sm:text-base text-sm">
-                  Supabase를 활용하여 로그인 상태를 유지하고, 인증되지 않은
-                  사용자는 로그인 페이지로 리디렉션
+                  Supabase의 시간순 정렬 로직을 활용해 최신 학습 내역을 한눈에
+                  확인할 수 있도록 구현한 페이지입니다.
                 </p>
               </div>
             </motion.section>
