@@ -97,7 +97,7 @@ export default function ModalContent({
                   하고, 북마크 상태를 실시간으로 업데이트
                 </p>
               </div>
-              <div className="border-b border-black py-4">
+              <div className="  py-4">
                 <p className="font-bold sm:text-xl text-base">
                   뜨끈하게 올라온 학습리스트
                 </p>
