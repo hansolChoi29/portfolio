@@ -1,6 +1,6 @@
 "use client";
 
-import ButtonUp from "@/app/components/ButtonUp";
+import ButtonUp from "@/components/ButtonUp";
 import { motion, AnimatePresence, MotionProps } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,10 +38,10 @@ export default function ModalContent({
           </button>
         </div>
 
-        <div className="flex flex-col items-center">
+        <section className="flex flex-col items-center">
           <div className="flex flex-col text-sm sm:text-base  text-gray-700 w-full max-w-[800px]">
             {/* 간단 소개박스 */}
-            <motion.section
+            <motion.div
               {...scrollAnimationProps}
               className="flex flex-col border rounded-xl border-black px-4 py-4 font-bold gap-2"
             >
@@ -102,9 +102,9 @@ export default function ModalContent({
               >
                 <p>트러블 슈팅 - 로그인 및 상태 관리 문제 해결</p>
               </Link>
-            </motion.section>
+            </motion.div>
             {/* 주요역할 */}
-            <motion.section {...scrollAnimationProps}>
+            <motion.div {...scrollAnimationProps}>
               <h1 className="my-24 font-bold sm:text-3xl text-xl  w-full flex justify-center">
                 주요 역할
               </h1>
@@ -143,9 +143,9 @@ export default function ModalContent({
                   지원했습니다.
                 </p>
               </div>
-            </motion.section>
+            </motion.div>
             {/*     개발 과정 상세 (Auth) 소개 */}
-            <section className="flex flex-col gap-24 py-24">
+            <div className="flex flex-col gap-24 py-24">
               <div className="flex flex-col gap-2 ">
                 <h1 className="font-bold sm:text-3xl py-24  text-xl w-full flex justify-center">
                   로그인 페이지 (SignInPage)
@@ -363,9 +363,9 @@ export default function ModalContent({
                   />
                 </div>
               </div>
-            </section>
+            </div>
             {/* Modal 소개 */}
-            <section className="py-24">
+            <div className="py-24">
               <h1 className="font-bold sm:text-3xl py-24  text-xl w-full flex justify-center">
                 RoomDetailModal
               </h1>
@@ -418,9 +418,9 @@ export default function ModalContent({
                   있는 직관적인 사용자 경험을 제공했습니다.
                 </p>
               </div>
-            </section>
+            </div>
             {/*  문의하기(Inquiry) 소개 */}
-            <section className="py-24">
+            <div className="py-24">
               <h1 className="font-bold sm:text-3xl py-24  text-xl w-full flex justify-center">
                 문의하기(InquiryModal)
               </h1>
@@ -485,9 +485,9 @@ export default function ModalContent({
                   동시에 만족시켰습니다.
                 </p>
               </div>
-            </section>
+            </div>
           </div>
-        </div>
+        </section>
         <ButtonUp modalRef={modalRef} />
       </motion.div>
     </AnimatePresence>

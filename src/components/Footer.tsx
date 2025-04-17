@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="border-t w-full bg-[#202020] py-10 px-6 text-left">
       <div className="flex flex-col md:flex-row items-center justify-between">
         {/* 아이콘 출처 문구 */}
-        <p className="text-base text-gray-500 mb-4 md:mb-0">
+        <div className="text-xs text-white mb-4 md:mb-0">
           Icons by{" "}
           <Link
             href="https://www.flaticon.com/free-icons/cdn"
@@ -18,15 +18,16 @@ export default function Footer() {
           >
             © Flaticon
           </Link>
-        </p>
+          <p>© 2025 Hansol Choi</p>
+        </div>
         {/* 전화번호, 이메일, 소셜 아이콘 */}
-        <div className="flex flex-col items-end p-4 space-y-3 text-lg text-gray-800">
+        <div className="flex flex-col items-end  text-sm text-gray-800">
           <div className="flex gap-2">
             <p className="text-white">전화번호</p>
             <p className="text-white">010-2915-2931</p>
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 mb-2">
             <p className="text-white">E-mail</p>
             <p className="text-white">ggksthf29@gmail.com</p>
           </div>

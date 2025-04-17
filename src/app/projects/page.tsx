@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import DuodincoPrPage from "../duodingcoPr/Modal";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import DogoPr from "../dogoPr/Modal";
 import Image from "next/image";
-import { slides } from "../SlidesMockData";
-import ToolsModal from "../components/ToolsModal";
+import { slides } from "../../SlidesMockData";
+import ToolsModal from "../../components/ToolsModal";
+// import Emotion from "@/components/Emotion";
 
 export default function ProjectsPage() {
   const [isToolsModalOpen, setIsToolsModalOpen] = useState(false);
@@ -143,6 +144,7 @@ export default function ProjectsPage() {
 
           <DuodincoPrPage />
         </motion.section>
+        {/* <Emotion /> */}
       </>
       <Footer />
     </main>

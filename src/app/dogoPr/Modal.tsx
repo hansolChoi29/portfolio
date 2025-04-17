@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
-import DogoCard from "../components/DogoCard";
+import DogoCard from "../../components/DogoCard";
 import ModalContent from "./components/ModalContent";
 
 export default function DogoPr() {

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import DuodincoCard from "../components/DudincoCard";
+import DuodincoCard from "../../components/DudincoCard";
 import ReactDOM from "react-dom";
 import ModalContent from "./components/ModalContent";
 
